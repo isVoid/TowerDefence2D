@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 2d23505c737136040af519f73a415567
-timeCreated: 1496413072
+timeCreated: 1496502304
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - BuildBtnGroup: {instanceID: 0}
+  - CannonBallItem: {fileID: 1925762854266622, guid: d1a6c9a01702ce440b993f86d59631f2,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

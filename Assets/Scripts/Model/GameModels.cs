@@ -6,10 +6,15 @@ using UnityEngine;
 public class GameModels : MonoBehaviour {
     public List<GameObject> stubList;
     public GameObject BuildBtnGroup;
+    public GameObject CannonBallItem;
 
     int lastClickStubIndex = -1;    //记录上一次点击是哪个
 
     private GameSceneController gameSceneController;
+
+    void Awake() {
+        CannonBallFactory.getInstance().initCannonBallItem(CannonBallItem);
+    }
 
     void Start () {
         gameSceneController = GameSceneController.getInstance();
