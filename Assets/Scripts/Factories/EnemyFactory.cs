@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType {Enemy1};
-
 public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
 
     public WaypointManager waypointManager;
@@ -14,23 +12,33 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
 
     public void spawn(EnemyType type) {
 
+//        Debug.Log("Spawn: Using: " + usingEnemy1List.Count + " Ununsed: " + unusedEnemy1List.Count);
+
         switch (type)
         {
             case EnemyType.Enemy1:
                 if (unusedEnemy1List.Count == 0)
                 {
+//                    Debug.Log("Creating new enemy");
                     GameObject newEnemy1 = Instantiate(Enemy1, waypointManager.getStart().position, waypointManager.getStart().rotation);
                     usingEnemy1List.Add(newEnemy1);
+
+//                    Debug.Log(newEnemy1.transform.position);
                 }
                 else
                 {
+//                    Debug.Log("Using old enemy");
                     GameObject usedEnemy1 = unusedEnemy1List[0];
-                    usingEnemy1List.Add(usedEnemy1);
                     unusedEnemy1List.RemoveAt(0);
 
                     usedEnemy1.transform.position = waypointManager.getStart().position;
                     usedEnemy1.transform.rotation = waypointManager.getStart().rotation;
                     usedEnemy1.SetActive(true);
+
+                    Debug.Log(usedEnemy1.transform.position);
+
+                    usingEnemy1List.Add(usedEnemy1);
+
                 }      
                 break;
         }
@@ -59,6 +67,8 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
     }
 
     public void recycle(GameObject Enemy) {
+
+//        Debug.Log("Recycle: Using: " + usingEnemy1List.Count + " Ununsed: " + unusedEnemy1List.Count);
 
         EnemyType type = Enemy.GetComponent<Enemy>().myType;
         switch (type)

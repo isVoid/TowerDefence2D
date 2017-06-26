@@ -5,12 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public EnemyType myType;
-    public int myValue;
     public Transform target;
     public EnemyFactory enemyFactory;
+    private FinanceManager fm;
 
     public float hp = 100f;
     public float mySpeed = 10f;
+    public int myValue = 5;
 
     private int waypointIndex = 0;
 
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
         target = WaypointManager.waypoints[0];
         enemyFactory = EnemyFactory.Instance;
+        fm = FinanceManager.getInstance();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +27,8 @@ public class Enemy : MonoBehaviour {
 		
         if (hp <= 0)
         {
-            enemyFactory.recycle(transform.gameObject);
+            destroy();
+
         }
 
         Vector3 dir = target.position - transform.position;
@@ -45,10 +48,19 @@ public class Enemy : MonoBehaviour {
 
         if (waypointIndex >= WaypointManager.waypoints.Length)
         {
-            waypointIndex = 0;
-            enemyFactory.recycle(transform.gameObject);
+            destroy();
         }
 
         target = WaypointManager.waypoints[waypointIndex];
+    }
+
+    void destroy(){
+        //Reset
+        hp = 100;
+        waypointIndex = 0;
+        //Reward
+        fm.increaseMoney(myValue);
+        //Recycle
+        enemyFactory.recycle(transform.gameObject);
     }
 }

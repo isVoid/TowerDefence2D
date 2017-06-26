@@ -8,6 +8,9 @@ public class GameModels : MonoBehaviour {
     public GameObject BuildBtnGroup;
     public GameObject CannonBallItem;
 
+    private FinanceManager fm;
+    private GameData data;
+
     private Transform[] stubList;
 
     int lastClickStubIndex = -1;    //记录上一次点击是哪个
@@ -26,6 +29,9 @@ public class GameModels : MonoBehaviour {
         }
 
         CannonBallFactory.getInstance().initCannonBallItem(CannonBallItem);
+
+        fm = FinanceManager.getInstance();
+        data = new GameData();
     }
 
     void Start () {
@@ -55,8 +61,9 @@ public class GameModels : MonoBehaviour {
 
     public void buildArrowTower() {
         Debug.Log("buildArrowTower at " + gameSceneController.getChosenStubNum());
-        BuildBtnGroup.SetActive(false);
-        stubList[gameSceneController.getChosenStubNum()].GetComponent<StubBehavior>().buildArrowTower();
+
+            BuildBtnGroup.SetActive(false);
+            stubList[gameSceneController.getChosenStubNum()].GetComponent<StubBehavior>().buildArrowTower();
     }
 
     public void buildSoldierTower() {
@@ -72,8 +79,12 @@ public class GameModels : MonoBehaviour {
     }
 
     public void buildCannonTower() {
-        Debug.Log("buildCannonTower at " + gameSceneController.getChosenStubNum());
-        BuildBtnGroup.SetActive(false);
-        stubList[gameSceneController.getChosenStubNum()].GetComponent<StubBehavior>().buildCannonTower();
+        if (fm.checkBalanceAgainst(data.CannonTowerPrice[0]))
+        {
+            fm.useMoney(data.CannonTowerPrice[0]);
+            Debug.Log("buildCannonTower at " + gameSceneController.getChosenStubNum());
+            BuildBtnGroup.SetActive(false);
+            stubList[gameSceneController.getChosenStubNum()].GetComponent<StubBehavior>().buildCannonTower();
+        }
     }
 }

@@ -39,7 +39,7 @@ public class CannonTowerBehavior : MonoBehaviour {
         {
             Transform loc = enemy.transform;
 
-            Debug.Log(Vector2.Distance(transform.position, loc.position));
+//            Debug.Log(Vector2.Distance(transform.position, loc.position));
 
             if (Vector2.Distance(transform.position, loc.position) <= range)
             {

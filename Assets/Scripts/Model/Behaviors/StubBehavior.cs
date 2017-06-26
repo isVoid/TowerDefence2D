@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-enum StubType { FlatGround, ArrowTower, SoldierTower, WizardTower, CannonTower };
-
 public class StubBehavior : MonoBehaviour {
     public Sprite ArrowTowerItem, SoldierTowerItem, WizardTowerItem, CannonTowerItem;
     public GameObject CannonTower, ArrowTower, SoldierTower, WizardTower;
