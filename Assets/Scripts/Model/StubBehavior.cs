@@ -8,6 +8,7 @@ enum StubType { FlatGround, ArrowTower, SoldierTower, WizardTower, CannonTower }
 
 public class StubBehavior : MonoBehaviour {
     public Sprite ArrowTowerItem, SoldierTowerItem, WizardTowerItem, CannonTowerItem;
+    public GameObject CannonTower, ArrowTower, SoldierTower, WizardTower;
 
     StubType stubType = StubType.FlatGround;
     Image myImage;
@@ -18,7 +19,7 @@ public class StubBehavior : MonoBehaviour {
     }
 	
 	void Update () {
-        detectKeyboardInput();
+//        detectKeyboardInput();
 	}
 
     void detectKeyboardInput() {
@@ -38,22 +39,30 @@ public class StubBehavior : MonoBehaviour {
     }
 
     public void buildArrowTower() {
-        stubType = StubType.ArrowTower;
-        myImage.sprite = ArrowTowerItem;
+        GameObject arrowTower = Instantiate(ArrowTower, transform.position, transform.rotation, transform.parent);
+        arrowTower.transform.localScale = transform.localScale;
+        this.gameObject.SetActive(false);
     }
 
     public void buildSoldierTower() {
-        stubType = StubType.SoldierTower;
-        myImage.sprite = SoldierTowerItem;
+        GameObject soldierTower = Instantiate(SoldierTower, transform.position, transform.rotation, transform.parent);
+        soldierTower.transform.localScale = transform.localScale;
+        this.gameObject.SetActive(false);
     }
 
     public void buildWizardTower() {
-        stubType = StubType.WizardTower;
-        myImage.sprite = WizardTowerItem;
+//        stubType = StubType.WizardTower;
+//        myImage.sprite = WizardTowerItem;
+        GameObject wizardTower = Instantiate(WizardTower, transform.position, transform.rotation, transform.parent);
+        wizardTower.transform.localScale = transform.localScale;
+        this.gameObject.SetActive(false);
     }
 
     public void buildCannonTower() {
-        stubType = StubType.CannonTower;
-        myImage.sprite = CannonTowerItem;
+//        stubType = StubType.CannonTower;
+//        myImage.sprite = CannonTowerItem;
+        GameObject cannonTower = Instantiate(CannonTower, transform.position, transform.rotation, transform.parent);
+        cannonTower.transform.localScale = transform.localScale;
+        this.gameObject.SetActive(false);
     }
 }

@@ -4,15 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameModels : MonoBehaviour {
-    public List<GameObject> stubList;
+    public GameObject stubManager;
     public GameObject BuildBtnGroup;
     public GameObject CannonBallItem;
+
+    private Transform[] stubList;
 
     int lastClickStubIndex = -1;    //记录上一次点击是哪个
 
     private GameSceneController gameSceneController;
 
     void Awake() {
+
+        stubList = new Transform[stubManager.transform.childCount];
+        Debug.Log(stubManager.transform.childCount);
+        for (int i = 0; i < stubManager.transform.childCount; i++)
+        {
+            Transform stub = stubManager.transform.GetChild(i);
+            stub.GetComponent<Stub>().ID = i;
+            stubList[i] = stub;
+        }
+
         CannonBallFactory.getInstance().initCannonBallItem(CannonBallItem);
     }
 
@@ -37,7 +49,7 @@ public class GameModels : MonoBehaviour {
                 return;
             }
         }
-        BuildBtnGroup.transform.position = stubList[stubIndex].transform.position;
+        BuildBtnGroup.transform.position = stubList[stubIndex].position;
         lastClickStubIndex = stubIndex;
     }
 

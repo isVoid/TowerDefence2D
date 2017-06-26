@@ -19,7 +19,6 @@ public class GameStatus : MonoBehaviour {
 
     public void setClickedStubIndex(int index) {
         chosenStubIndex = index;
-        Debug.Log("setClickedStubIndex " + chosenStubIndex);
 
         gameSceneController.setBuildBtnGroupPos(chosenStubIndex);
     }

@@ -20,8 +20,9 @@ public class UserInterface : MonoBehaviour {
         //Debug.Log("onGUIBtnClick! " + transform.position + " " + this.name);
 
         if (this.tag.Equals("Stub")) {
-            string stubName = this.name;
-            int index = stubName[stubName.Length - 1] - '0' - 1;
+//            string stubName = this.name;
+//            int index = stubName[stubName.Length - 1] - '0' - 1;
+            int index = transform.GetComponent<Stub>().ID;
             userClickOp.setClickedStubIndex(index);
         }
         else if (this.tag.Equals("BuildBtn")) {

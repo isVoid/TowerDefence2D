@@ -7,6 +7,10 @@ public class CannonBallBehavior : MonoBehaviour {
     public float duration = 1.0f;
     public float g = -13.0f;       //重力加速度
 
+    public float damage = 20f;
+
+    public GameObject target;
+
     Vector2 currentPos, targetPos;
 
     private Vector2 speed;        //初速度向量
@@ -37,7 +41,10 @@ public class CannonBallBehavior : MonoBehaviour {
         //当处于下落状态，且y方向位置低于target位置，则视为炮弹落地
         if (this.gameObject.transform.position.y < targetPos.y
             && abs(speed.y) < abs(gravity.y))
+        {
+            target.GetComponent<Enemy>().hp -= damage;
             CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
+        }
     }
 
     //取绝对值
