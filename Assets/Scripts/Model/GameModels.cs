@@ -151,6 +151,7 @@ public class GameModels : MonoBehaviour {
                 {
                     fm.useMoney(price);
                     chosenTower.GetComponent<BaseTowerBehavior>().upgrade();
+                    UpgradeBtnGroup.SetActive(false);
                 }
                 else
                 {

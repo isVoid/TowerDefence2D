@@ -6,10 +6,11 @@ using UnityEngine;
 public class UserInterface : MonoBehaviour {
 
     UserClickOp userClickOp;
+    SceneClickOp sceneClickOp;
 
     void Start () {
         userClickOp = GameSceneController.getInstance() as UserClickOp;
-
+        sceneClickOp = GameObject.Find("GameManager").GetComponent<SwitchSceneUtil>() as SceneClickOp;
     }
 	
 	void Update () {
@@ -48,6 +49,17 @@ public class UserInterface : MonoBehaviour {
                 userClickOp.sellTower();
             else if (btnName.Contains("Upgrade"))
                 userClickOp.upgradeTower();
+        }
+    }
+
+    public void onTitleClickCallBack(string button) {
+        if (button == "Start")
+        {
+            sceneClickOp.loadLevel(0);
+        }
+        else if (button == "Quit")
+        {
+            Application.Quit();
         }
     }
 }

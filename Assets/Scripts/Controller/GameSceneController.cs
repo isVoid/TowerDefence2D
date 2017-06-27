@@ -8,7 +8,7 @@ namespace Com.TowerDefence2d {
     public class GameSceneController : System.Object, UserClickOp {
         private static GameSceneController instance;
         private GameStatus myGameStatus;
-        private GameModels myGameModels;
+        private GameModels myGameModels; 
 
         public static GameSceneController getInstance() {
             if (instance == null)

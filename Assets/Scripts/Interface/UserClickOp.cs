@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Com.TowerDefence2d {
 
     public interface UserClickOp {
+ 
         void setClickedStubIndex(int index);
         void setClickedTowerIndex(int index);
 
@@ -16,4 +17,5 @@ namespace Com.TowerDefence2d {
         void upgradeTower();
         void sellTower();
     }
+
 }
