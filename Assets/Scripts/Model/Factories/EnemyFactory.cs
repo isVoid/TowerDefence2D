@@ -98,5 +98,10 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
 
         return allEnemies;
     }
-        
+
+    public bool allSpriteRecycled()
+    {
+        return usingEnemy1List.Count == 0;
+    }
+
 }

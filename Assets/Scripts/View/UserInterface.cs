@@ -7,10 +7,12 @@ public class UserInterface : MonoBehaviour {
 
     UserClickOp userClickOp;
     SceneClickOp sceneClickOp;
+    MenuClickOp menuClickOp;
 
     void Start () {
         userClickOp = GameSceneController.getInstance() as UserClickOp;
         sceneClickOp = GameObject.Find("GameManager").GetComponent<SwitchSceneUtil>() as SceneClickOp;
+        menuClickOp = GameSceneController.getInstance() as MenuClickOp;
     }
 	
 	void Update () {
@@ -62,4 +64,28 @@ public class UserInterface : MonoBehaviour {
             Application.Quit();
         }
     }
+
+    public void onSummaryClickCallBack(string button) {
+        if (button == "Return")
+        {
+            sceneClickOp.loadTitleScene();
+        }
+    }
+
+    public void onMenuClickCallback(string button) {
+
+        if (button == "pauseMenu")
+        {
+            menuClickOp.pauseGame();
+        }
+        else if (button == "toTitle")
+        {
+            sceneClickOp.loadLevel(0);
+        }
+        else if (button == "cancel")
+        {
+            menuClickOp.startGame();
+        }
+    }
+
 }

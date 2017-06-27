@@ -3,8 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState{ Paused, Running }
+
 public class GameStatus : MonoBehaviour {
     private GameSceneController gameSceneController;
+
+    GameState gameState;
 
     int chosenStubIndex = -1;
     int chosenTowerIndex = -1;
@@ -12,11 +16,24 @@ public class GameStatus : MonoBehaviour {
     void Start () {
         gameSceneController = GameSceneController.getInstance();
         gameSceneController.setGameStatus(this);
+
+        gameState = GameState.Running;
     }
 	
 	void Update () {
 		
 	}
+
+    public GameState getGameState() {
+        return gameState;
+    }
+
+    public void switchGameState() {
+        if (gameState == GameState.Running)
+            gameState = GameState.Paused;
+        else if (gameState == GameState.Paused)
+            gameState = GameState.Running;
+    }
 
     public void setClickedStubIndex(int index) {
         chosenStubIndex = index;

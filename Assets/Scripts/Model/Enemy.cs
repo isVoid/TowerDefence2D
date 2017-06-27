@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour {
         if (hp <= 0)
         {
             destroy();
+            //Reward
+            fm.increaseMoney(myValue);
 
         }
 
@@ -58,8 +60,6 @@ public class Enemy : MonoBehaviour {
         //Reset
         hp = 100;
         waypointIndex = 0;
-        //Reward
-        fm.increaseMoney(myValue);
         //Recycle
         enemyFactory.recycle(transform.gameObject);
     }

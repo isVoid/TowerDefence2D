@@ -5,26 +5,41 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour {
 
     private EnemyFactory factory;
+    private GameFlow gameFlow;
 
-    public float timeBetweenWaves = 20f;
+    public float timeBetweenWaves = 5f;
     public int spawnNum = 1;
     private float countdown = 0f;
 
-    private int waveNum = 1;
+    private int currentWave = 0;
+    private int waveNum = 3;
 
 	// Use this for initialization
 	void Awake () {
         factory = EnemyFactory.Instance;
+        gameFlow = GameSceneController.getInstance() as GameFlow;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+        if (currentWave == waveNum && factory.allSpriteRecycled())
+        {
+            Debug.Log("Level Finish!");
+            gameFlow.endGame();
+            return;
+        }
+
+        if (currentWave == waveNum)
+        {
+            return;
+        }
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
-            waveNum++;
+            currentWave++;
         }
 
         countdown -= Time.deltaTime;

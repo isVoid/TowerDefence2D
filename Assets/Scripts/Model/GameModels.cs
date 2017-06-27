@@ -4,10 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameModels : MonoBehaviour {
+
+    public GameObject enemySpawner;
     public GameObject stubManager;
+
     public GameObject BuildBtnGroup;
     public GameObject UpgradeBtnGroup;
     public GameObject CannonBallItem;
+
+    public GameObject SummaryGUI;
+    public GameObject GameMenu;
+    public GameObject MenuGUI;
 
     private FinanceManager fm;
     private GameData data;
@@ -19,6 +26,8 @@ public class GameModels : MonoBehaviour {
     int lastClickTowerIndex = -1;
 
     private GameSceneController gameSceneController;
+
+    private float timeScale;
 
     void Awake() {
 
@@ -45,6 +54,33 @@ public class GameModels : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void pauseGame()
+    {
+        enemySpawner.SetActive(false);
+        GameMenu.SetActive(false);
+        MenuGUI.SetActive(true);
+
+        timeScale = Time.timeScale;
+        Time.timeScale = 0;
+
+    }
+
+    public void startGame()
+    {
+        enemySpawner.SetActive(true);
+        GameMenu.SetActive(true);
+        MenuGUI.SetActive(false);
+
+        Time.timeScale = timeScale;
+    }
+
+    public void endGame()
+    {
+        enemySpawner.SetActive(false);
+        GameMenu.SetActive(false);
+        SummaryGUI.SetActive(true);
+    }
 
     public void setBuildBtnGroupPos(int stubIndex) {
         if (!BuildBtnGroup.activeInHierarchy) {
