@@ -2,8 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CannonTowerBehavior : MonoBehaviour, BaseTowerBehavior {
+
+    public Image mImage;
+    public Sprite[] levelImages;
 
     public CannonTower I;
 
@@ -13,6 +17,7 @@ public class CannonTowerBehavior : MonoBehaviour, BaseTowerBehavior {
 
 	// Use this for initialization
 	void Awake () {
+        mImage = transform.GetComponent<Image>();
         I = new CannonTower();
         fireCountDown = I.interval;
         enemyFactory = EnemyFactory.Instance;
@@ -68,11 +73,18 @@ public class CannonTowerBehavior : MonoBehaviour, BaseTowerBehavior {
 
     public void upgrade() {
         I.upgrade();
+
+        mImage.sprite = levelImages[I.lv];
     }
 
     public void sell() {
         gameObject.SetActive(false);
         Destroy(gameObject);
+    }
+
+    public int getLevel()
+    {
+        return I.lv;
     }
 
     public int valueOf() {

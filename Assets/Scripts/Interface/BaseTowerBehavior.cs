@@ -10,6 +10,8 @@ public interface BaseTowerBehavior {
     int getStubID();
     void setStubID(int stubID);
 
+    int getLevel();
+
     void upgrade();
     int valueOf();
     void sell();

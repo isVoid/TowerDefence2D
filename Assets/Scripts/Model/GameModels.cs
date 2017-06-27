@@ -132,7 +132,41 @@ public class GameModels : MonoBehaviour {
     }
 
     public void upgradeTower() {
-        
+        int id = gameSceneController.getChosenTowerNum();
+        Debug.Log("Upgrading!" + id + "th Tower!");
+        Transform chosenTower = null;
+        for (int i = 0; i < towerList.Count; i++)
+        {
+            if (towerList[id].GetComponent<BaseTowerBehavior>().getID() == id)
+                chosenTower = towerList[id];
+        }
+        if (chosenTower != null)
+        {
+            int currentLv = chosenTower.GetComponent<BaseTowerBehavior>().getLevel();
+            if (currentLv < data.CannonTowerLevel - 1)
+            {
+                int price = data.CannonTowerPrice[currentLv + 1];
+
+                if (fm.checkBalanceAgainst(price))
+                {
+                    fm.useMoney(price);
+                    chosenTower.GetComponent<BaseTowerBehavior>().upgrade();
+                }
+                else
+                {
+                    Debug.Log("Not enough Money!");
+                }
+            }
+            else
+            {
+                Debug.Log("Level Max out!");
+            }
+        }
+        else
+        {
+            Debug.Log("Cannot find chosen tower!");
+        }
+
     }
 
     public void sellTower() {

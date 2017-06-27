@@ -20,7 +20,9 @@ public class GameData {
         
     }
 
-    public int[] CannonTowerPrice = {20, 40, 60, 80, 100};
+    public int CannonTowerLevel = 2;
+    public int[] CannonTowerDamange = { 20, 40 };
+    public int[] CannonTowerPrice = {20, 40};
 
     public int[] EnemyValue = { 5 };
 
