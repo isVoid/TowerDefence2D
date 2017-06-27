@@ -32,12 +32,24 @@ namespace Com.TowerDefence2d {
             myGameModels.setBuildBtnGroupPos(stubIndex);
         }
 
+        public void setUpgradeBtnGroupPos(int towerIndex) {
+            myGameModels.setUpgradeBtnGroupPos(towerIndex);
+        }
+
         public int getChosenStubNum() {
             return myGameStatus.getChosenStubNum();
         }
 
+        public int getChosenTowerNum() {
+            return myGameStatus.getChosenTowerNum();
+        }
+
         public void setClickedStubIndex(int index) {
             myGameStatus.setClickedStubIndex(index);
+        }
+
+        public void setClickedTowerIndex(int index) {
+            myGameStatus.setClickedTowerIndex(index);
         }
 
         public void buildArrowTower() {
@@ -54,6 +66,14 @@ namespace Com.TowerDefence2d {
 
         public void buildCannonTower() {
             myGameModels.buildCannonTower();
+        }
+
+        public void sellTower() {
+            myGameModels.sellTower();
+        }
+
+        public void upgradeTower() {
+            myGameModels.upgradeTower();
         }
     }
 }

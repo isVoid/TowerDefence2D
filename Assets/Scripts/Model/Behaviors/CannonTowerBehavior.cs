@@ -3,20 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonTowerBehavior : MonoBehaviour {
+public class CannonTowerBehavior : MonoBehaviour, BaseTowerBehavior {
 
-    public int lv = 0;
-
-    public float range = 10f;
-    public float interval = 2f;
+    public CannonTower I;
 
     private float fireCountDown;
 
     EnemyFactory enemyFactory;
 
 	// Use this for initialization
-	void Start () {
-        fireCountDown = interval;
+	void Awake () {
+        I = new CannonTower();
+        fireCountDown = I.interval;
         enemyFactory = EnemyFactory.Instance;
 	}
 	
@@ -26,7 +24,7 @@ public class CannonTowerBehavior : MonoBehaviour {
         if (fireCountDown <= 0f)
         {
             fire();
-            fireCountDown = interval;
+            fireCountDown = I.interval;
         }
 
         fireCountDown -= Time.deltaTime;
@@ -41,7 +39,7 @@ public class CannonTowerBehavior : MonoBehaviour {
 
 //            Debug.Log(Vector2.Distance(transform.position, loc.position));
 
-            if (Vector2.Distance(transform.position, loc.position) <= range)
+            if (Vector2.Distance(transform.position, loc.position) <= I.range)
             {
                 Vector2 currPos = new Vector2(this.gameObject.transform.position.x,
                     this.gameObject.transform.position.y  + 0.5f);
@@ -65,6 +63,36 @@ public class CannonTowerBehavior : MonoBehaviour {
         RectTransformUtility.ScreenPointToWorldPointInRectangle(CanvasTransform, transform.position, null, out worldPos);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(worldPos, range);
+        Gizmos.DrawWireSphere(worldPos, I.range);
     }
+
+    public void upgrade() {
+        I.upgrade();
+    }
+
+    public void sell() {
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
+
+    public int valueOf() {
+        return I.value;
+    }
+
+    public void setID(int id) {
+        I.ID = id;
+    }
+
+    public int getID() {
+        return I.ID;
+    }
+
+    public void setStubID(int stubid) {
+        I.StubID = stubid;
+    }
+
+    public int getStubID() {
+        return I.StubID;
+    }
+
 }

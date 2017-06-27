@@ -20,7 +20,7 @@ public class FinanceManager : System.Object {
     public int balance = 100;
 
     private FinanceManager() {
-        moneyUIText = GameObject.Find("CurrentMoney");
+        moneyUIText = GameObject.FindWithTag("Money");
     }
 
     public void increaseMoney(int amount)

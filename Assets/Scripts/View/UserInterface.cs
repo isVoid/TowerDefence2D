@@ -19,13 +19,13 @@ public class UserInterface : MonoBehaviour {
     public void onGUIBtnClick() {
         //Debug.Log("onGUIBtnClick! " + transform.position + " " + this.name);
 
-        if (this.tag.Equals("Stub")) {
-//            string stubName = this.name;
-//            int index = stubName[stubName.Length - 1] - '0' - 1;
+        if (this.tag.Equals("Stub"))
+        {
             int index = transform.GetComponent<Stub>().ID;
             userClickOp.setClickedStubIndex(index);
         }
-        else if (this.tag.Equals("BuildBtn")) {
+        else if (this.tag.Equals("BuildBtn"))
+        {
             string btnName = this.name;
             if (btnName.Contains("Arrow"))
                 userClickOp.buildArrowTower();
@@ -35,6 +35,19 @@ public class UserInterface : MonoBehaviour {
                 userClickOp.buildWizardTower();
             else if (btnName.Contains("Cannon"))
                 userClickOp.buildCannonTower();
+        }
+        else if (this.tag.Equals("Tower"))
+        {
+            int index = transform.GetComponent<BaseTowerBehavior>().getID();
+            userClickOp.setClickedTowerIndex(index);
+        }
+        else if (this.tag.Equals("UpgradeBtn"))
+        {
+            string btnName = this.name;
+            if (btnName.Contains("Sell"))
+                userClickOp.sellTower();
+            else if (btnName.Contains("Upgrade"))
+                userClickOp.upgradeTower();
         }
     }
 }
