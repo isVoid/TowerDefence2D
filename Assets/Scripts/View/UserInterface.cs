@@ -31,13 +31,15 @@ public class UserInterface : MonoBehaviour {
         {
             string btnName = this.name;
             if (btnName.Contains("Arrow"))
-                userClickOp.buildArrowTower();
+                userClickOp.buildDrinkTower();
             else if (btnName.Contains("Soldier"))
-                userClickOp.buildSoldierTower();
+                userClickOp.buildPizzaTower();
             else if (btnName.Contains("Wizard"))
-                userClickOp.buildWizardTower();
+                userClickOp.buildMelonTower();
             else if (btnName.Contains("Cannon"))
-                userClickOp.buildCannonTower();
+                userClickOp.buildGuandongTower();
+            else if (btnName.Contains("Ice"))
+                userClickOp.buildIceTower();
         }
         else if (this.tag.Equals("Tower"))
         {

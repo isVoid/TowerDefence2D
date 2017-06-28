@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         target = WaypointManager.waypoints[0];
-        enemyFactory = EnemyFactory.Instance;
+        enemyFactory = EnemyFactory.getInstance();
         fm = FinanceManager.getInstance();
 	}
 	
@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour {
         hp = 100;
         waypointIndex = 0;
         //Recycle
+
         enemyFactory.recycle(transform.gameObject);
     }
 }

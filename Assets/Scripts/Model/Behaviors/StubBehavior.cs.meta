@@ -1,14 +1,16 @@
 fileFormatVersion: 2
 guid: 35e2337fff6c2ab4385536b8ccbcdf64
-timeCreated: 1496419738
+timeCreated: 1498633598
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - ArrowTowerItem: {fileID: 21300000, guid: 46c9800045e7bcb41a0e1c08141a1690, type: 3}
-  - SoldierTowerItem: {fileID: 21300000, guid: a26feec4745c5274dbda2e4647c98590, type: 3}
-  - WizardTowerItem: {fileID: 21300000, guid: 0385ea046442e48468698b8af92d79d6, type: 3}
-  - CannonTowerItem: {fileID: 21300000, guid: 5a10bb0d03fec854e86de603fd9cfedb, type: 3}
+  - GuandongTower: {fileID: 1266402414393330, guid: 07a1a85354d6944bda02ab348295c23f,
+      type: 2}
+  - PizzaTower: {instanceID: 0}
+  - DrinkTower: {instanceID: 0}
+  - MelonTower: {instanceID: 0}
+  - IceTower: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -2,7 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
+public class EnemyFactory : System.Object {
+
+    private static EnemyFactory instance;
+    public static EnemyFactory getInstance()
+    {
+        if (instance == null)
+            instance = new EnemyFactory();
+
+        return instance;
+    }
+
+    public void initEnemySprites(List<GameObject> ememySprites)
+    {
+        Enemy1 = ememySprites[0];
+        Enemy2 = ememySprites[1];
+        Enemy3 = ememySprites[2];
+        Enemy4 = ememySprites[3];
+    }
 
     public WaypointManager waypointManager;
 
@@ -10,36 +27,33 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
     private List<GameObject> usingEnemy1List = new List<GameObject>();
     private List<GameObject> unusedEnemy1List = new List<GameObject>();
 
-    public void spawn(EnemyType type) {
+    public GameObject Enemy2;
+    private List<GameObject> usingEnemy2List = new List<GameObject>();
+    private List<GameObject> unusedEnemy2List = new List<GameObject>();
 
-//        Debug.Log("Spawn: Using: " + usingEnemy1List.Count + " Ununsed: " + unusedEnemy1List.Count);
+    public GameObject Enemy3;
+    private List<GameObject> usingEnemy3List = new List<GameObject>();
+    private List<GameObject> unusedEnemy3List = new List<GameObject>();
+
+    public GameObject Enemy4;
+    private List<GameObject> usingEnemy4List = new List<GameObject>();
+    private List<GameObject> unusedEnemy4List = new List<GameObject>();
+
+    public void spawn(EnemyType type) {
 
         switch (type)
         {
-            case EnemyType.Enemy1:
-                if (unusedEnemy1List.Count == 0)
-                {
-//                    Debug.Log("Creating new enemy");
-                    GameObject newEnemy1 = Instantiate(Enemy1, waypointManager.getStart().position, waypointManager.getStart().rotation);
-                    usingEnemy1List.Add(newEnemy1);
-
-//                    Debug.Log(newEnemy1.transform.position);
-                }
-                else
-                {
-//                    Debug.Log("Using old enemy");
-                    GameObject usedEnemy1 = unusedEnemy1List[0];
-                    unusedEnemy1List.RemoveAt(0);
-
-                    usedEnemy1.transform.position = waypointManager.getStart().position;
-                    usedEnemy1.transform.rotation = waypointManager.getStart().rotation;
-                    usedEnemy1.SetActive(true);
-
-                    Debug.Log(usedEnemy1.transform.position);
-
-                    usingEnemy1List.Add(usedEnemy1);
-
-                }      
+            case EnemyType.Enemy1:  
+                spawnImpl(Enemy1, usingEnemy1List, unusedEnemy1List);
+                break;
+            case EnemyType.Enemy2:  
+                spawnImpl(Enemy2, usingEnemy2List, unusedEnemy2List);
+                break;
+            case EnemyType.Enemy3:  
+                spawnImpl(Enemy3, usingEnemy3List, unusedEnemy3List);
+                break;
+            case EnemyType.Enemy4:  
+                spawnImpl(Enemy4, usingEnemy4List, unusedEnemy4List);
                 break;
         }
 
@@ -49,16 +63,16 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
     {
         if (usingEnemyList.Count == 0)
         {
-            GameObject newEnemy = Instantiate(Enemy, waypointManager.getStart().position, waypointManager.getStart().rotation);
-            usingEnemy1List.Add(newEnemy);
+            GameObject newEnemy = Camera.Instantiate(Enemy, waypointManager.getStart().position, waypointManager.getStart().rotation);
+            usingEnemyList.Add(newEnemy);
 
             newEnemy.SetActive(true);
         }
         else
         {
             GameObject usedEnemy = unusedEnemyList[0];
-            usingEnemy1List.Add(usedEnemy);
-            unusedEnemy1List.RemoveAt(0);
+            usingEnemyList.Add(usedEnemy);
+            unusedEnemyList.RemoveAt(0);
 
             usedEnemy.transform.position = waypointManager.getStart().position;
             usedEnemy.transform.rotation = waypointManager.getStart().rotation;
@@ -76,6 +90,15 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
             case EnemyType.Enemy1:
                 recycleImpl(Enemy, usingEnemy1List, unusedEnemy1List);
                 break;
+            case EnemyType.Enemy2:
+                recycleImpl(Enemy, usingEnemy2List, unusedEnemy2List);
+                break;
+            case EnemyType.Enemy3:
+                recycleImpl(Enemy, usingEnemy3List, unusedEnemy3List);
+                break;
+            case EnemyType.Enemy4:
+                recycleImpl(Enemy, usingEnemy4List, unusedEnemy4List);
+                break;
         }
 
     }
@@ -85,6 +108,7 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
 
         if (index != -1)
         {
+            Enemy.transform.position = new Vector3(11, 5, 0);
             Enemy.SetActive(false);
             usingEnemyList.RemoveAt(index);
             unusedEnemyList.Add(Enemy);
@@ -95,13 +119,16 @@ public class EnemyFactory : SingletonScriptableObject<EnemyFactory> {
 
         List<GameObject> allEnemies = new List<GameObject>();
         allEnemies.AddRange(usingEnemy1List);
+        allEnemies.AddRange(usingEnemy2List);
+        allEnemies.AddRange(usingEnemy3List);
+        allEnemies.AddRange(usingEnemy4List);
 
         return allEnemies;
     }
 
     public bool allSpriteRecycled()
     {
-        return usingEnemy1List.Count == 0;
+        return getAllActiveEnemies().Count == 0;
     }
 
 }

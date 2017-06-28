@@ -52,7 +52,7 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
             myGameModels.endGame();
         }
     }
-
+        
     public void setBuildBtnGroupPos(int stubIndex) {
         myGameModels.setBuildBtnGroupPos(stubIndex);
     }
@@ -77,20 +77,24 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
         myGameStatus.setClickedTowerIndex(index);
     }
 
-    public void buildArrowTower() {
-        myGameModels.buildArrowTower();
+    public void buildIceTower() {
+        myGameModels.buildIceTower();
     }
 
-    public void buildSoldierTower() {
-        myGameModels.buildSoldierTower();
+    public void buildDrinkTower() {
+        myGameModels.buildDrinkTower();
     }
 
-    public void buildWizardTower() {
-        myGameModels.buildWizardTower();
+    public void buildPizzaTower() {
+        myGameModels.buildPizzaTower();
     }
 
-    public void buildCannonTower() {
-        myGameModels.buildCannonTower();
+    public void buildMelonTower() {
+        myGameModels.buildMelonTower();
+    }
+
+    public void buildGuandongTower() {
+        myGameModels.buildGuandongTower();
     }
 
     public void sellTower() {

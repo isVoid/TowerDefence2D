@@ -8,7 +8,7 @@ public class SwitchSceneUtil : MonoBehaviour, SceneClickOp {
 
     private string titleScene = "GameTitle";
     private string[] levels = {
-        "Level1"
+        "Level0"
     };
 
 	// Use this for initialization

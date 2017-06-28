@@ -17,7 +17,7 @@ public class FinanceManager : System.Object {
 
     public GameObject moneyUIText;
 
-    public int balance = 100;
+    public int balance = 10000000;
 
     private FinanceManager() {
         moneyUIText = GameObject.FindWithTag("Money");
@@ -26,7 +26,7 @@ public class FinanceManager : System.Object {
     public void increaseMoney(int amount)
     {
         balance += amount;
-        Debug.Log(balance + " " + amount);
+//        Debug.Log(balance + " " + amount);
         moneyUIText.GetComponent<Text>().text = balance.ToString();
     }
 

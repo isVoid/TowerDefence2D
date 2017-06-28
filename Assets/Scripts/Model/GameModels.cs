@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class GameModels : MonoBehaviour {
 
+    public int level;
+
     public GameObject enemySpawner;
     public GameObject stubManager;
 
     public GameObject BuildBtnGroup;
     public GameObject UpgradeBtnGroup;
-    public GameObject CannonBallItem;
+    public List<GameObject> CannonBallItems;
+    public List<GameObject> EnemyItems;
 
     public GameObject SummaryGUI;
     public GameObject GameMenu;
     public GameObject MenuGUI;
 
+    public WaypointManager waypointManager;
     private FinanceManager fm;
     private GameData data;
 
@@ -39,8 +43,10 @@ public class GameModels : MonoBehaviour {
             stub.GetComponent<Stub>().ID = i;
             stubList[i] = stub;
         }
-
-        CannonBallFactory.getInstance().initCannonBallItem(CannonBallItem);
+            
+        CannonBallFactory.getInstance().initCannonBallItem(CannonBallItems);
+        EnemyFactory.getInstance().initEnemySprites(EnemyItems);
+        EnemyFactory.getInstance().waypointManager = waypointManager;
 
         fm = FinanceManager.getInstance();
         data = GameData.getInstance();
@@ -49,6 +55,8 @@ public class GameModels : MonoBehaviour {
     void Start () {
         gameSceneController = GameSceneController.getInstance();
         gameSceneController.setGameModels(this);
+
+        data.initLevelData(level);
     }
 	
 	void Update () {
@@ -71,7 +79,7 @@ public class GameModels : MonoBehaviour {
         enemySpawner.SetActive(true);
         GameMenu.SetActive(true);
         MenuGUI.SetActive(false);
-
+         
         Time.timeScale = timeScale;
     }
 
@@ -111,54 +119,79 @@ public class GameModels : MonoBehaviour {
         lastClickTowerIndex = towerIndex;
     }
 
-    public void buildArrowTower() {
-        int stubID = gameSceneController.getChosenStubNum();
-        Debug.Log("buildArrowTower at " + stubID);
-        BuildBtnGroup.SetActive(false);
-        Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildArrowTower();
-        tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
-
-        int id = towerList.Count;
-        //TODO: Set ID in tower
-
-        towerList.Add(tower);
-    }
-
-    public void buildSoldierTower() {
-
-        int stubID = gameSceneController.getChosenStubNum();
-        Debug.Log("build SoldierTower at " + stubID);
-        BuildBtnGroup.SetActive(false);
-        Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildSoldierTower();
-        tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
-
-        int id = towerList.Count;
-        //TODO: Set ID in tower
-
-        towerList.Add(tower);
-    }
-
-    public void buildWizardTower() {
-        int stubID = gameSceneController.getChosenStubNum();
-        Debug.Log("build WizardTower at " + stubID);
-        BuildBtnGroup.SetActive(false);
-        Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildWizardTower();
-        tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
-
-        int id = towerList.Count;
-        //TODO: Set ID in tower
-
-        towerList.Add(tower);
-    }
-
-    public void buildCannonTower() {
-        if (fm.checkBalanceAgainst(data.CannonTowerPrice[0]))
+    public void buildIceTower() {
+        if (fm.checkBalanceAgainst(data.IceTowerPrice[0]))
         {
-            fm.useMoney(data.CannonTowerPrice[0]);
+            fm.useMoney(data.IceTowerPrice[0]);
+            int stubID = gameSceneController.getChosenStubNum();
+            Debug.Log("buildPizzaTower at " + stubID);
+            BuildBtnGroup.SetActive(false);        
+            Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildIceTower();
+            tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
+
+            int id = towerList.Count;
+            tower.GetComponent<BaseTowerBehavior>().setID(id);
+            towerList.Add(tower);
+        }
+    }
+
+    public void buildDrinkTower() {
+        if (fm.checkBalanceAgainst(data.DrinkTowerPrice[0]))
+        {
+            fm.useMoney(data.DrinkTowerPrice[0]);
+            int stubID = gameSceneController.getChosenStubNum();
+            Debug.Log("buildPizzaTower at " + stubID);
+            BuildBtnGroup.SetActive(false);        
+            Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildDrinkTower();
+            tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
+
+            int id = towerList.Count;
+            tower.GetComponent<BaseTowerBehavior>().setID(id);
+            towerList.Add(tower);
+        }
+    }
+
+    public void buildPizzaTower() {
+
+        if (fm.checkBalanceAgainst(data.PizzaTowerPrice[0]))
+        {
+            fm.useMoney(data.PizzaTowerPrice[0]);
+            int stubID = gameSceneController.getChosenStubNum();
+            Debug.Log("buildPizzaTower at " + stubID);
+            BuildBtnGroup.SetActive(false);        
+            Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildPizzaTower();
+            tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
+
+            int id = towerList.Count;
+            tower.GetComponent<BaseTowerBehavior>().setID(id);
+            towerList.Add(tower);
+        }
+    }
+
+    public void buildMelonTower() {
+        if (fm.checkBalanceAgainst(data.MelonTowerPrice[0]))
+        {
+            fm.useMoney(data.MelonTowerPrice[0]);
+            int stubID = gameSceneController.getChosenStubNum();
+            Debug.Log("buildMelonTower at " + stubID);
+            BuildBtnGroup.SetActive(false);        
+            Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildMelonTower();
+            tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
+
+            int id = towerList.Count;
+            tower.GetComponent<BaseTowerBehavior>().setID(id);
+            towerList.Add(tower);
+        }
+    }
+
+    public void buildGuandongTower() {
+        if (fm.checkBalanceAgainst(data.GuandongTowerPrice[0]))
+        {
+            fm.useMoney(data.GuandongTowerPrice[0]);
             int stubID = gameSceneController.getChosenStubNum();
             Debug.Log("buildCannonTower at " + stubID);
             BuildBtnGroup.SetActive(false);        
-            Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildCannonTower();
+            Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildGuandongTower();
             tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
 
             int id = towerList.Count;
@@ -179,9 +212,9 @@ public class GameModels : MonoBehaviour {
         if (chosenTower != null)
         {
             int currentLv = chosenTower.GetComponent<BaseTowerBehavior>().getLevel();
-            if (currentLv < data.CannonTowerLevel - 1)
+            if (currentLv < data.GuandongTowerLevel - 1)
             {
-                int price = data.CannonTowerPrice[currentLv + 1];
+                int price = data.GuandongTowerPrice[currentLv + 1];
 
                 if (fm.checkBalanceAgainst(price))
                 {

@@ -2,35 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct Wave
+{
+    public int enemyCount;
+    public List<EnemyType> enemyType;
+
+    public Wave(int c, List<EnemyType> t) 
+    {
+        enemyCount = c;
+        enemyType = t;
+    }
+}
+
 public class WaveSpawner : MonoBehaviour {
 
     private EnemyFactory factory;
     private GameFlow gameFlow;
+    private GameData data;
 
-    public float timeBetweenWaves = 5f;
+    public float timeBetweenWaves = 10f;
     public int spawnNum = 1;
-    private float countdown = 0f;
+    public float countdown = 0f;
 
-    private int currentWave = 0;
-    private int waveNum = 3;
+    public int currentWave = 0;
+
+    private List<Wave> waves;
 
 	// Use this for initialization
 	void Awake () {
-        factory = EnemyFactory.Instance;
+        factory = EnemyFactory.getInstance();
         gameFlow = GameSceneController.getInstance() as GameFlow;
+        data = GameData.getInstance();
+        waves = GameData.getInstance().waveLists;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-        if (currentWave == waveNum && factory.allSpriteRecycled())
+        if (currentWave == waves.Count && factory.allSpriteRecycled())
         {
             Debug.Log("Level Finish!");
             gameFlow.endGame();
             return;
         }
 
-        if (currentWave == waveNum)
+        if (currentWave == waves.Count)
         {
             return;
         }
@@ -39,7 +55,7 @@ public class WaveSpawner : MonoBehaviour {
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
-            currentWave++;
+
         }
 
         countdown -= Time.deltaTime;
@@ -48,11 +64,36 @@ public class WaveSpawner : MonoBehaviour {
 
     IEnumerator SpawnWave()
     {
-        for (int i = 0; i < spawnNum; i++)
+        Debug.Log(waves[currentWave].enemyCount);
+        for (int i = 0; i < waves[currentWave].enemyCount; i++)
         {
-            factory.spawn(EnemyType.Enemy1);
+            Debug.Log("Spawning: " + waves[currentWave].enemyType[i]);
+            switch (waves[currentWave].enemyType[i])
+            {
+                case EnemyType.Enemy1:
+                    factory.spawn(EnemyType.Enemy1);
+                    break;
+                case EnemyType.Enemy2:
+                    factory.spawn(EnemyType.Enemy2);
+                    break;
+                case EnemyType.Enemy3:
+                    factory.spawn(EnemyType.Enemy3);
+                    break;
+                case EnemyType.Enemy4:
+                    factory.spawn(EnemyType.Enemy4);
+                    break;
+            }
             yield return new WaitForSeconds(1f);
         }
+
+//
+//
+//        for (int i = 0; i < spawnNum; i++)
+//        {
+//            factory.spawn(EnemyType.Enemy1);
+//            yield return new WaitForSeconds(1f);
+//        }
+        currentWave++;
     }
 
 }
