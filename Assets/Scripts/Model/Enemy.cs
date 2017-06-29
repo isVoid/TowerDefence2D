@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
     public EnemyType myType;
     public Transform target;
     public EnemyFactory enemyFactory;
-    private FinanceManager fm;
+    private GameSceneController controller;
 
     public float hp = 100f;
     public float mySpeed = 10f;
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
         target = WaypointManager.waypoints[0];
         enemyFactory = EnemyFactory.getInstance();
-        fm = FinanceManager.getInstance();
+        controller = GameSceneController.getInstance();
 	}
 	
 	// Update is called once per frame
@@ -27,10 +27,7 @@ public class Enemy : MonoBehaviour {
 		
         if (hp <= 0)
         {
-            destroy();
-            //Reward
-            fm.increaseMoney(myValue);
-
+            killed();
         }
 
         Vector3 dir = target.position - transform.position;
@@ -50,7 +47,7 @@ public class Enemy : MonoBehaviour {
 
         if (waypointIndex >= WaypointManager.waypoints.Length)
         {
-            destroy();
+            damage();
         }
 
         target = WaypointManager.waypoints[waypointIndex];
@@ -61,7 +58,18 @@ public class Enemy : MonoBehaviour {
         hp = 100;
         waypointIndex = 0;
         //Recycle
-
         enemyFactory.recycle(transform.gameObject);
+    }
+
+    void killed()
+    {
+        controller.reward(myValue);
+        destroy();
+    }
+
+    void damage()
+    {
+        controller.sufferDamage(1);
+        destroy();
     }
 }

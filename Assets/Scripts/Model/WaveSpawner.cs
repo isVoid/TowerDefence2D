@@ -96,4 +96,8 @@ public class WaveSpawner : MonoBehaviour {
         currentWave++;
     }
 
+    public bool waveFinish()
+    {
+        return currentWave == waves.Count;
+    }
 }

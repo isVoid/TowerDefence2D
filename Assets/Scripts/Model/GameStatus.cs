@@ -9,6 +9,7 @@ public class GameStatus : MonoBehaviour {
     private GameSceneController gameSceneController;
 
     GameState gameState;
+    GamePointManager gamePointManager;
 
     int chosenStubIndex = -1;
     int chosenTowerIndex = -1;
@@ -18,6 +19,8 @@ public class GameStatus : MonoBehaviour {
         gameSceneController.setGameStatus(this);
 
         gameState = GameState.Running;
+
+        gamePointManager = GamePointManager.getInstance();
     }
 	
 	void Update () {
@@ -53,5 +56,19 @@ public class GameStatus : MonoBehaviour {
 
     public int getChosenTowerNum() {
         return chosenTowerIndex;
+    }
+
+    public void sufferDamage(int value)
+    {
+        gamePointManager.sufferDamage(value);
+        if (gamePointManager.starIsZero())
+        {
+            //TODO: Fail the game
+        }
+    }
+
+    public int getCurrentStar()
+    {
+        return gamePointManager.CurrentStar;
     }
 }

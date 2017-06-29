@@ -7,4 +7,5 @@ public interface GameFlow {
     void startGame();
     void pauseGame();
     void endGame();
+
 }

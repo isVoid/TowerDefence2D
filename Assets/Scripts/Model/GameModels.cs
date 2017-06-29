@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameModels : MonoBehaviour {
 
@@ -88,6 +89,15 @@ public class GameModels : MonoBehaviour {
         enemySpawner.SetActive(false);
         GameMenu.SetActive(false);
         SummaryGUI.SetActive(true);
+    }
+
+    public void failGame()
+    {
+        enemySpawner.SetActive(false);
+        GameMenu.SetActive(false);
+        SummaryGUI.SetActive(true);
+        Debug.Log(SummaryGUI.transform.GetChild(1).GetComponent<Text>().text);
+        SummaryGUI.transform.GetChild(1).GetComponent<Text>().text = "失败！";
     }
 
     public void setBuildBtnGroupPos(int stubIndex) {
@@ -266,4 +276,10 @@ public class GameModels : MonoBehaviour {
             Debug.Log("Cannot find chosen tower!");
         }
     }
+
+    public void reward(int value)
+    {
+        fm.increaseMoney(value);
+    }
+        
 }

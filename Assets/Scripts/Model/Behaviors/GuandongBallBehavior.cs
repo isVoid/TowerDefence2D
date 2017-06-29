@@ -12,7 +12,7 @@ public class GuandongBallBehavior : BaseBallBehavior {
 
     private float dTime = 0;
 
-    void FixedUpdate() {
+    protected override void FixedUpdate() {
         dTime += Time.fixedDeltaTime;
         gravity.y = g * dTime;    //v=g*t
         //模拟位移

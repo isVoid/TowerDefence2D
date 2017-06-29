@@ -7,6 +7,8 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     private static GameSceneController instance;
     private GameStatus myGameStatus;
     private GameModels myGameModels; 
+    private UIManager myUIManager;
+    private GameMonitor myGameMonitor;
 
     public static GameSceneController getInstance() {
         if (instance == null)
@@ -24,6 +26,18 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
         if (myGameModels == null) {
             myGameModels = _myGameModels;
         }
+    }
+
+    internal void setUIManager(UIManager _myUIManager)
+    {
+        if (myUIManager == null)
+            myUIManager = _myUIManager;
+    }
+
+    internal void setGameMonitor(GameMonitor _myGameMonitor)
+    {
+        if (myGameMonitor == null)
+            myGameMonitor = _myGameMonitor;
     }
 
     public void startGame()
@@ -50,9 +64,20 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
         {
             myGameStatus.switchGameState();
             myGameModels.endGame();
+            myUIManager.updateStarViewOnGameFinish();
         }
     }
-        
+
+    public void failGame()
+    {
+        if (myGameStatus.getGameState() == GameState.Running)
+        {
+            myGameStatus.switchGameState();
+            myGameModels.failGame();
+            myUIManager.updateStarViewOnGameFinish();
+        }
+    }
+
     public void setBuildBtnGroupPos(int stubIndex) {
         myGameModels.setBuildBtnGroupPos(stubIndex);
     }
@@ -104,6 +129,18 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     public void upgradeTower() {
         myGameModels.upgradeTower();
     }
+
+    public void reward(int value)
+    {
+        myGameModels.reward(value);
+    }
+
+    public void sufferDamage(int num)
+    {
+        myGameStatus.sufferDamage(num);
+        myUIManager.updateStarView(myGameStatus.getCurrentStar());
+    }
+        
 }
 
 
