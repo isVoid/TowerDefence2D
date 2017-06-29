@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class IceTowerBehavior : BaseTowerBehavior {
 
+    public float slowTime = 2f;
+    public float slowFactor = 0.8f;
+
     protected override void fire() 
     {
         base.fire();
@@ -18,6 +21,8 @@ public class IceTowerBehavior : BaseTowerBehavior {
             GameObject cannonBall = CannonBallFactory.getInstance().generateCannonBall(currPos, tarPos, BallType.IceBall);
             cannonBall.GetComponent<IceBallBehavior>().target = target.gameObject;
             cannonBall.GetComponent<IceBallBehavior>().damage = damage;
+            cannonBall.GetComponent<IceBallBehavior>().slowTime = slowTime;
+            cannonBall.GetComponent<IceBallBehavior>().slowFactor = slowFactor;
         }
 
 

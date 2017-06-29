@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DrinkTowerBehavior : BaseTowerBehavior {
 	
+    public float stunnTime = 1f;
+
     protected override void fire() 
     {
         base.fire();
@@ -19,6 +21,7 @@ public class DrinkTowerBehavior : BaseTowerBehavior {
             GameObject cannonBall = CannonBallFactory.getInstance().generateCannonBall(currPos, tarPos, BallType.DrinkBall);
             cannonBall.GetComponent<DrinkBallBehavior>().target = target.gameObject;
             cannonBall.GetComponent<DrinkBallBehavior>().damage = damage; 
+            cannonBall.GetComponent<DrinkBallBehavior>().stunnTime = stunnTime; 
         }
 
 

@@ -98,4 +98,24 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
         gameObject.SetActive(false);
         Destroy(gameObject);
     }
+
+    void OnDrawGizmosSelected(){
+        float Radius = range;
+        Transform T = transform.GetComponent<Transform>();
+        Gizmos.color = Color.red;
+        float theta = 0;
+        float x = Radius*Mathf.Cos(theta);
+        float y = Radius*Mathf.Sin(theta);
+        Vector3 pos = T.position+new Vector3(x,y,0);
+        Vector3 newPos = pos;
+        Vector3 lastPos = pos;
+        for(theta = 0.1f;theta<Mathf.PI*2;theta+=0.1f){
+            x = Radius*Mathf.Cos(theta);
+            y = Radius*Mathf.Sin(theta);
+            newPos = T.position+new Vector3(x,y,0);
+            Gizmos.DrawLine(pos,newPos);
+            pos = newPos;
+        }
+        Gizmos.DrawLine(pos,lastPos);
+    }
 }

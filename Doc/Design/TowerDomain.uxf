@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>245</y>
+      <x>56</x>
+      <y>308</y>
       <w>175</w>
       <h>105</h>
     </coordinates>
@@ -25,8 +25,8 @@ void buildPizzaTower();
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>147</y>
+      <x>56</x>
+      <y>210</y>
       <w>175</w>
       <h>63</h>
     </coordinates>
@@ -41,8 +41,8 @@ getChosenStubNum()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>147</x>
-      <y>203</y>
+      <x>133</x>
+      <y>266</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -52,8 +52,8 @@ getChosenStubNum()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>49</x>
-      <y>392</y>
+      <x>35</x>
+      <y>455</y>
       <w>231</w>
       <h>147</h>
     </coordinates>
@@ -75,8 +75,8 @@ PizzaTower : GameObject, Prefab
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>147</x>
-      <y>343</y>
+      <x>133</x>
+      <y>406</y>
       <w>21</w>
       <h>63</h>
     </coordinates>
@@ -86,8 +86,8 @@ PizzaTower : GameObject, Prefab
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>434</y>
+      <x>595</x>
+      <y>595</y>
       <w>126</w>
       <h>56</h>
     </coordinates>
@@ -101,8 +101,8 @@ BaseTowerBehavior
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>231</y>
+      <x>364</x>
+      <y>385</y>
       <w>84</w>
       <h>35</h>
     </coordinates>
@@ -113,8 +113,8 @@ GuandongTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>231</y>
+      <x>483</x>
+      <y>385</y>
       <w>84</w>
       <h>35</h>
     </coordinates>
@@ -125,8 +125,8 @@ MelonTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>581</x>
-      <y>231</y>
+      <x>609</x>
+      <y>385</y>
       <w>84</w>
       <h>35</h>
     </coordinates>
@@ -137,8 +137,8 @@ IceTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>714</x>
-      <y>231</y>
+      <x>742</x>
+      <y>385</y>
       <w>84</w>
       <h>35</h>
     </coordinates>
@@ -149,8 +149,8 @@ PizzaTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>833</x>
-      <y>231</y>
+      <x>861</x>
+      <y>385</y>
       <w>84</w>
       <h>35</h>
     </coordinates>
@@ -161,8 +161,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>315</x>
-      <y>301</y>
+      <x>343</x>
+      <y>455</y>
       <w>119</w>
       <h>35</h>
     </coordinates>
@@ -175,8 +175,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>371</x>
-      <y>259</y>
+      <x>399</x>
+      <y>413</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -186,8 +186,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>301</y>
+      <x>469</x>
+      <y>455</y>
       <w>119</w>
       <h>35</h>
     </coordinates>
@@ -200,8 +200,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>301</y>
+      <x>595</x>
+      <y>455</y>
       <w>119</w>
       <h>35</h>
     </coordinates>
@@ -214,8 +214,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
-      <y>301</y>
+      <x>721</x>
+      <y>455</y>
       <w>119</w>
       <h>35</h>
     </coordinates>
@@ -228,8 +228,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>819</x>
-      <y>301</y>
+      <x>847</x>
+      <y>455</y>
       <w>119</w>
       <h>35</h>
     </coordinates>
@@ -242,8 +242,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>259</y>
+      <x>518</x>
+      <y>413</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -253,8 +253,20 @@ DrinkTower</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>616</x>
-      <y>259</y>
+      <x>644</x>
+      <y>413</y>
+      <w>42</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+has a</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>777</x>
+      <y>413</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -264,8 +276,8 @@ DrinkTower</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>749</x>
-      <y>259</y>
+      <x>896</x>
+      <y>413</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -275,74 +287,63 @@ DrinkTower</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>868</x>
-      <y>259</y>
-      <w>21</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>371</x>
-      <y>329</y>
+      <x>399</x>
+      <y>483</y>
       <w>273</w>
-      <h>119</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>370.0;150.0;370.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>370.0;160.0;370.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>329</y>
+      <x>511</x>
+      <y>483</y>
       <w>161</w>
-      <h>119</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>210.0;150.0;210.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>210.0;160.0;210.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>623</x>
-      <y>329</y>
+      <x>651</x>
+      <y>483</y>
       <w>21</w>
-      <h>119</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>623</x>
-      <y>329</y>
+      <x>651</x>
+      <y>483</y>
       <w>147</w>
-      <h>119</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;110.0;190.0;110.0;190.0;10.0</additional_attributes>
+    <additional_attributes>10.0;160.0;10.0;110.0;190.0;110.0;190.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>623</x>
-      <y>329</y>
+      <x>651</x>
+      <y>483</y>
       <w>266</w>
-      <h>119</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;110.0;360.0;110.0;360.0;10.0</additional_attributes>
+    <additional_attributes>10.0;160.0;10.0;110.0;360.0;110.0;360.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>266</x>
-      <y>35</y>
+      <x>203</x>
+      <y>91</y>
       <w>98</w>
       <h>42</h>
     </coordinates>
@@ -353,35 +354,172 @@ DrinkTower</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>238</x>
-      <y>70</y>
-      <w>98</w>
-      <h>231</h>
+      <x>224</x>
+      <y>126</y>
+      <w>49</w>
+      <h>238</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;310.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;320.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>658</x>
-      <y>49</y>
+      <x>903</x>
+      <y>126</y>
       <w>98</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>这部分描述了每种塔
-的行为的泛化和特化</panel_attributes>
+和炮弹的行为的泛化
+和特化</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>595</x>
+      <y>280</y>
+      <w>126</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;singleton&gt;&gt;
+CannonBallFactory
+--
+--
++ generateCannonBall(type: BallType) : GameObject</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>616</x>
-      <y>84</y>
-      <w>105</w>
-      <h>161</h>
+      <x>644</x>
+      <y>329</y>
+      <w>21</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;210.0;130.0;140.0;130.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>224</y>
+      <w>84</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;GameObject&gt;&gt;
+GuandongBall</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>168</y>
+      <w>119</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
+GuandongBallBehavior
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>112</y>
+      <w>119</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
+BaseBallBehavior
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>252</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>196</y>
+      <w>42</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+has a</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>644</x>
+      <y>140</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>462</x>
+      <y>266</y>
+      <w>98</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>省略了其他炮弹种类
+关系类似</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>112</y>
+      <w>119</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;singleton&gt;&gt;
+EnemyFactory
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>119</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>476</x>
+      <y>49</y>
+      <w>98</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>部分炮弹需要用到
+全局敌人信息，
+如溅射伤害</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

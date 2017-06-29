@@ -131,4 +131,29 @@ public class EnemyFactory : System.Object {
         return getAllActiveEnemies().Count == 0;
     }
 
+    public void applyConstantRangeDamage(Vector2 damagePos, float range, float damage)
+    {
+        List<GameObject> allEnemies = getAllActiveEnemies();
+        foreach (GameObject enemy in allEnemies)
+        {
+            Vector2 ePos = enemy.transform.position;
+            if (Vector2.Distance(damagePos, ePos) <= range)
+            {
+                enemy.GetComponent<Enemy>().hp -= damage;
+            }
+        }
+    }
+
+    public void applyRangeBleedBuf(Vector2 damagePos, float range, float bleedTime, float bleedDamage)
+    {
+        List<GameObject> allEnemies = getAllActiveEnemies();
+        foreach (GameObject enemy in allEnemies)
+        {
+            Vector2 ePos = enemy.transform.position;
+            if (Vector2.Distance(damagePos, ePos) <= range)
+            {
+                enemy.GetComponent<Enemy>().applyBleedBuf(bleedTime, bleedDamage);
+            }
+        }
+    }
 }

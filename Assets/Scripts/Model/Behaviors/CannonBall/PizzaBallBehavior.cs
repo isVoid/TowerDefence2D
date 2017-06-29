@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuandongBallBehavior : BaseBallBehavior {
-    public float duration = 1.0f;
+public class PizzaBallBehavior : BaseBallBehavior {
     public float g = -13.0f;       //重力加速度
 
-    private Vector2 speed;        //初速度向量
     private Vector2 gravity;      //重力方向速度
 
     private float dTime = 0;
+
+    public float explodeRange { get; set; }
+    public float bleedTime { get; set; }
+    public float bleedDamage { get; set; }
 
     protected override void FixedUpdate() {
         dTime += Time.fixedDeltaTime;
@@ -23,10 +25,12 @@ public class GuandongBallBehavior : BaseBallBehavior {
         if (this.gameObject.transform.position.y < targetPos.y
             && abs(speed.y) < abs(gravity.y))
         {
-            target.GetComponent<Enemy>().hp -= damage;
+            //            target.GetComponent<Enemy>().hp -= damage;
+            explode();
             CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
         }
     }
+
 
     //取绝对值
     float abs(float a) {
@@ -46,4 +50,31 @@ public class GuandongBallBehavior : BaseBallBehavior {
         dTime = 0;
     }
 
+    void explode()
+    {
+        enemyFactory.applyConstantRangeDamage(transform.position, explodeRange, damage);
+//        Debug.Log("Applying BleedBuf." + bleedTime);
+        enemyFactory.applyRangeBleedBuf(transform.position, explodeRange, bleedTime, bleedDamage);
+    }
+
+
+    void OnDrawGizmosSelected(){
+        float Radius = explodeRange;
+        Transform T = transform.GetComponent<Transform>();
+        Gizmos.color = Color.yellow;
+        float theta = 0;
+        float x = Radius*Mathf.Cos(theta);
+        float y = Radius*Mathf.Sin(theta);
+        Vector3 pos = T.position+new Vector3(x,y,0);
+        Vector3 newPos = pos;
+        Vector3 lastPos = pos;
+        for(theta = 0.1f;theta<Mathf.PI*2;theta+=0.1f){
+            x = Radius*Mathf.Cos(theta);
+            y = Radius*Mathf.Sin(theta);
+            newPos = T.position+new Vector3(x,y,0);
+            Gizmos.DrawLine(pos,newPos);
+            pos = newPos;
+        }
+        Gizmos.DrawLine(pos,lastPos);
+    }
 }
