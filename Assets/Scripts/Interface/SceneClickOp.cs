@@ -6,6 +6,7 @@ using UnityEngine;
 public interface SceneClickOp {
     
     void loadTitleScene();
+    void loadLevelSelectScene();
     void loadLevel(int level);
 
 }

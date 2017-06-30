@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SwitchSceneUtil : MonoBehaviour, SceneClickOp {
 
     private string titleScene = "GameTitle";
+    private string levelSelectScene = "LevelSelect";
     private string[] levels = {
         "Level0"
     };
@@ -22,6 +23,10 @@ public class SwitchSceneUtil : MonoBehaviour, SceneClickOp {
 
     public void loadTitleScene() {
         SceneManager.LoadScene(titleScene, LoadSceneMode.Single);
+    }
+
+    public void loadLevelSelectScene() {
+        SceneManager.LoadScene(levelSelectScene, LoadSceneMode.Single);   
     }
 
     public void loadLevel(int level)

@@ -55,10 +55,13 @@ public class GameData {
     public int[] EnemyHP = { 100, 200, 400, 800 };
     public float[] EnemySpeed = { 0.2f, 0.4f, 0.8f, 1.0f};
 
+    public int totalLevel = 1;
+
     public List<Wave> waveLists = new List<Wave>(); 
 
     public void initLevelData (int level) {
 
+        waveLists.Clear();
         if (level == 0)
         {
             List<EnemyType> t0 = new List<EnemyType> {EnemyType.Enemy1, EnemyType.Enemy2, EnemyType.Enemy3};

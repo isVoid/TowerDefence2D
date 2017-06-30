@@ -59,7 +59,8 @@ public class UserInterface : MonoBehaviour {
     public void onTitleClickCallBack(string button) {
         if (button == "Start")
         {
-            sceneClickOp.loadLevel(0);
+//            sceneClickOp.loadLevel(0);
+            sceneClickOp.loadLevelSelectScene();
         }
         else if (button == "Quit")
         {
@@ -67,6 +68,19 @@ public class UserInterface : MonoBehaviour {
         }
     }
 
+    public void onLevelSelectClickCallBack(string button) {
+        if (button == "StartLevel")
+        {
+            int level = transform.parent.GetChild(1).GetComponent<CardViewManager>().selectedLevel;
+            Debug.Log("Starting Lv: " + level);
+            sceneClickOp.loadLevel(level);
+        }
+        else if (button == "ReturnTitle")
+        {
+            sceneClickOp.loadTitleScene();
+        }
+    }
+       
     public void onSummaryClickCallBack(string button) {
         if (button == "Return")
         {
