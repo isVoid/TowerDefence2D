@@ -53,7 +53,7 @@ public class PizzaBallBehavior : BaseBallBehavior {
     void explode()
     {
         enemyFactory.applyConstantRangeDamage(transform.position, explodeRange, damage);
-//        Debug.Log("Applying BleedBuf." + bleedTime);
+        Debug.Log("Applying BleedBuf." + bleedTime);
         enemyFactory.applyRangeBleedBuf(transform.position, explodeRange, bleedTime, bleedDamage);
     }
 

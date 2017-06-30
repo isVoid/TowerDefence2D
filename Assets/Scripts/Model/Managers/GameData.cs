@@ -52,6 +52,8 @@ public class GameData {
     public float[] IceTowerSlowFactor = { 0.9f, 0.85f, 0.8f };
 
     public int[] EnemyValue = { 100, 200, 400, 800 };
+    public int[] EnemyHP = { 100, 200, 400, 800 };
+    public float[] EnemySpeed = { 0.2f, 0.4f, 0.8f, 1.0f};
 
     public List<Wave> waveLists = new List<Wave>(); 
 

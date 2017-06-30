@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public abstract class Enemy : MonoBehaviour {
 
     public EnemyType myType;
     public Transform target;
     public EnemyFactory enemyFactory;
     private GameSceneController controller;
-    private GameData data;
+    protected GameData data;
 
-    public float hp = 100f;
-    public float mySpeed = 10f;
-    public int myValue = 5;
+    public float hp;
+    public float mySpeed;
+    public int myValue;
 
     private int waypointIndex = 0;
 
@@ -23,8 +23,12 @@ public class Enemy : MonoBehaviour {
         controller = GameSceneController.getInstance();
 
         data = GameData.getInstance();
+
+        loadEnemyData();
 	}
 	
+    protected abstract void loadEnemyData();
+
 	// Update is called once per frame
 	void Update () {
 		

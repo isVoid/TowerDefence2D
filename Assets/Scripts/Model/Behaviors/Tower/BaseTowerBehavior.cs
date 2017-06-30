@@ -33,6 +33,7 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
         fireCountDown = interval;
         enemyFactory = EnemyFactory.getInstance();
 
+        d = GameData.getInstance();
         loadTowerProperties();
     }
 
