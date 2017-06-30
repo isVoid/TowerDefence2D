@@ -47,4 +47,14 @@ public class GuandongTowerBehavior : BaseTowerBehavior {
         }
     }
 
+    protected override void loadTowerProperties()
+    {
+        maxTargetNum = d.GuandongTowerMaxTargetNum[lv];
+        range = d.GuandongTowerRange[lv];
+
+        damage = d.GuandongTowerDamage[lv];
+        value = (int)Mathf.Floor(d.GuandongTowerPrice[lv] * 0.5f);
+    }
+
+
 }

@@ -23,7 +23,7 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
 
     public int damage;
 
-    GameData d;
+    protected GameData d;
 
     protected Transform target;
 
@@ -32,6 +32,8 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
         mImage = transform.GetComponent<Image>();
         fireCountDown = interval;
         enemyFactory = EnemyFactory.getInstance();
+
+        loadTowerProperties();
     }
 
     // Update is called once per frame
@@ -54,7 +56,6 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
         {
             Transform loc = enemy.transform;
 
-//            Debug.Log(Vector2.Distance(transform.position, loc.position) + " " + range);
             if (Vector2.Distance(transform.position, loc.position) <= range)
             {
                 target = loc;
@@ -62,6 +63,8 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
             }
         }
     }
+
+    protected abstract void loadTowerProperties();
 
     public int getLevel()
     {
@@ -90,6 +93,7 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
 
     public void upgrade() {
         lv++;
+        loadTowerProperties();
         //        mImage.sprite = levelImages[I.lv];
         transform.localScale = Vector3.Scale(transform.localScale, new Vector3(1.1f, 1.1f, 1f));
     }

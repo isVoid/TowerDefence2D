@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
     public Transform target;
     public EnemyFactory enemyFactory;
     private GameSceneController controller;
+    private GameData data;
 
     public float hp = 100f;
     public float mySpeed = 10f;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour {
         enemyFactory = EnemyFactory.getInstance();
         controller = GameSceneController.getInstance();
 
+        data = GameData.getInstance();
 	}
 	
 	// Update is called once per frame

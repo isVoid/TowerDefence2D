@@ -27,5 +27,15 @@ public class IceTowerBehavior : BaseTowerBehavior {
 
 
     }
+
+    protected override void loadTowerProperties()
+    {
+        slowTime = d.IceTowerSlowTime[lv];
+        slowFactor = d.IceTowerSlowFactor[lv];
+
+        interval = d.IceTowerFireInterval[lv];
+        damage = d.IceTowerDamage[lv];
+        value = (int)Mathf.Floor(d.IceTowerPrice[lv] * 0.5f);
+    }
         
 }

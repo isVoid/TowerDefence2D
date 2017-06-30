@@ -8,7 +8,7 @@ public class IceBallBehavior : BaseBallBehavior {
     public float slowTime = 2f;
     public float slowFactor = 0.8f;
 
-    protected virtual void FixedUpdate() {
+    protected override void FixedUpdate() {
         //TODO: Define Shooting behavior
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, 4f * Time.deltaTime);

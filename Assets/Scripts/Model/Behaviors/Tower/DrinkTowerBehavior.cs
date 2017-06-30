@@ -24,7 +24,15 @@ public class DrinkTowerBehavior : BaseTowerBehavior {
             cannonBall.GetComponent<DrinkBallBehavior>().stunnTime = stunnTime; 
         }
 
+    }
 
+    protected override void loadTowerProperties()
+    {
+        stunnTime = d.DrinkTowerStunTime[lv];
+
+        interval = d.DrinkTowerFireInterval[lv];
+        damage = d.DrinkTowerDamage[lv];
+        value = (int)Mathf.Floor(d.DrinkTowerPrice[lv] * 0.5f);
     }
 
 }

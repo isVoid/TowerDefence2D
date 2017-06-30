@@ -36,4 +36,12 @@ public class MelonTowerBehavior : BaseTowerBehavior {
         }
     }
  
+    protected override void loadTowerProperties()
+    {
+        interval = d.MelonTowerFireInterval[lv];
+
+        damage = d.MelonTowerDamage[lv];
+        value = (int)Mathf.Floor(d.MelonTowerPrice[lv] * 0.5f);
+    }
+
 }

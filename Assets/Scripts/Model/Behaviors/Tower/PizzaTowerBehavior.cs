@@ -32,5 +32,15 @@ public class PizzaTowerBehavior : BaseTowerBehavior {
         }
 
     }
+
+    protected override void loadTowerProperties()
+    {
+        explodeRange = d.PizzaTowerExplodeRange[lv];
+        bleedTime = d.PizzaTowerBleedTime[lv];
+        bleedDamage = d.PizzaTowerDamage[lv];
+
+        damage = d.PizzaTowerDamage[lv];
+        value = (int)Mathf.Floor(d.PizzaTowerPrice[lv] * 0.5f);
+    }
         
 }

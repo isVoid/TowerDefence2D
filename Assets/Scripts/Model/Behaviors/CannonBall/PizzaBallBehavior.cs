@@ -10,9 +10,9 @@ public class PizzaBallBehavior : BaseBallBehavior {
 
     private float dTime = 0;
 
-    public float explodeRange { get; set; }
-    public float bleedTime { get; set; }
-    public float bleedDamage { get; set; }
+    public float explodeRange;
+    public float bleedTime;
+    public float bleedDamage;
 
     protected override void FixedUpdate() {
         dTime += Time.fixedDeltaTime;

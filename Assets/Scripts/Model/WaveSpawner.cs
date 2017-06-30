@@ -18,7 +18,6 @@ public class WaveSpawner : MonoBehaviour {
 
     private EnemyFactory factory;
     private GameFlow gameFlow;
-    private GameData data;
 
     public float timeBetweenWaves = 10f;
     public int spawnNum = 1;
@@ -32,7 +31,6 @@ public class WaveSpawner : MonoBehaviour {
 	void Awake () {
         factory = EnemyFactory.getInstance();
         gameFlow = GameSceneController.getInstance() as GameFlow;
-        data = GameData.getInstance();
         waves = GameData.getInstance().waveLists;
 	}
 	
@@ -85,14 +83,7 @@ public class WaveSpawner : MonoBehaviour {
             }
             yield return new WaitForSeconds(1f);
         }
-
-//
-//
-//        for (int i = 0; i < spawnNum; i++)
-//        {
-//            factory.spawn(EnemyType.Enemy1);
-//            yield return new WaitForSeconds(1f);
-//        }
+            
         currentWave++;
     }
 

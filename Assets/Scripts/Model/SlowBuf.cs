@@ -12,12 +12,6 @@ public class SlowBuf : BaseBuf {
         transform.GetComponent<Enemy>().mySpeed *= slowFactor;
     }
 
-	// Update is called once per frame
-	void Update () {
-        base.Update();
-
-	}
-
     void OnDestroy() {
         transform.GetComponent<Enemy>().mySpeed = oldSpeed;
 

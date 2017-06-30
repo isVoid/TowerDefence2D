@@ -6,7 +6,7 @@ public class BaseBuf : MonoBehaviour {
     public float lifeTime;
     public float currentTime = 0;
 
-    protected void Update()
+    protected virtual void Update()
     {
         currentTime += Time.deltaTime;
         if (currentTime > lifeTime)
