@@ -39,6 +39,22 @@ public class EnemyFactory : System.Object {
     private List<GameObject> usingEnemy4List = new List<GameObject>();
     private List<GameObject> unusedEnemy4List = new List<GameObject>();
 
+    public void wipeFactory()
+    {
+        usingEnemy1List.Clear();
+        unusedEnemy1List.Clear();
+
+        usingEnemy2List.Clear();
+        unusedEnemy2List.Clear();
+
+        usingEnemy3List.Clear();
+        unusedEnemy3List.Clear();
+
+        usingEnemy4List.Clear();
+        unusedEnemy4List.Clear();
+
+    }
+
     public void spawn(EnemyType type) {
 
         switch (type)

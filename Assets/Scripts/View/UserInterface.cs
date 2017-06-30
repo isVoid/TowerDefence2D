@@ -1,5 +1,4 @@
-﻿using Com.TowerDefence2d;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -84,7 +83,7 @@ public class UserInterface : MonoBehaviour {
     public void onSummaryClickCallBack(string button) {
         if (button == "Return")
         {
-            sceneClickOp.loadTitleScene();
+            sceneClickOp.loadLevelSelectScene();
         }
     }
 
@@ -94,9 +93,9 @@ public class UserInterface : MonoBehaviour {
         {
             menuClickOp.pauseGame();
         }
-        else if (button == "toTitle")
+        else if (button == "Return")
         {
-            sceneClickOp.loadLevel(0);
+            sceneClickOp.loadLevelSelectScene();
         }
         else if (button == "cancel")
         {

@@ -10,10 +10,19 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     private UIManager myUIManager;
     private GameMonitor myGameMonitor;
 
+    private EnemyFactory enemyFactory;
+    private CannonBallFactory cannonBallFactory;
+
     public static GameSceneController getInstance() {
         if (instance == null)
             instance = new GameSceneController();
         return instance;
+    }
+
+    private GameSceneController()
+    {
+        enemyFactory = EnemyFactory.getInstance();
+        cannonBallFactory = CannonBallFactory.getInstance();
     }
 
     internal void setGameStatus(GameStatus _myGameStatus) {
@@ -65,6 +74,9 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
             myGameStatus.switchGameState();
             myGameModels.endGame();
             myUIManager.updateStarViewOnGameFinish();
+
+            enemyFactory.wipeFactory();
+            cannonBallFactory.wipeFactory();
         }
     }
 
@@ -75,6 +87,9 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
             myGameStatus.switchGameState();
             myGameModels.failGame();
             myUIManager.updateStarViewOnGameFinish();
+
+            enemyFactory.wipeFactory();
+            cannonBallFactory.wipeFactory();
         }
     }
 
@@ -140,7 +155,22 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
         myGameStatus.sufferDamage(num);
         myUIManager.updateStarView(myGameStatus.getCurrentStar());
     }
-        
+
+    public int getCurrentStar()
+    {
+        return myGameStatus.getCurrentStar();
+    }
+
+    public void updateCountDownUI(float countDownSec)
+    {
+        myUIManager.updateCountDownUI(countDownSec);
+    }
+
+    public void updateMoneyUI(int balance)
+    {
+        myUIManager.updateBalanceValue(balance);
+    }
+
 }
 
 

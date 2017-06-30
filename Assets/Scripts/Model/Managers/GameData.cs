@@ -21,6 +21,12 @@ public class GameData {
         
     }
 
+    /**
+
+    STATIC DATA
+    
+    **/
+
     public int GuandongTowerLevel = 3;
     public int[] GuandongTowerDamage = { 120, 200, 320 };
     public int[] GuandongTowerPrice = { 400, 120, 240 };
@@ -70,5 +76,13 @@ public class GameData {
         }
 
     }
+
+    /**
+
+    RUNTIME DATA
+    
+    **/
+
+    public int balance = 1500;
 
 }

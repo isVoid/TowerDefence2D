@@ -1,5 +1,4 @@
-﻿using Com.TowerDefence2d;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,6 +50,7 @@ public class GameModels : MonoBehaviour {
 
         fm = FinanceManager.getInstance();
         data = GameData.getInstance();
+
     }
 
     void Start () {
@@ -58,6 +58,8 @@ public class GameModels : MonoBehaviour {
         gameSceneController.setGameModels(this);
 
         data.initLevelData(level);
+
+        fm.setBalance(data.balance);
     }
 	
 	void Update () {
@@ -89,6 +91,20 @@ public class GameModels : MonoBehaviour {
         enemySpawner.SetActive(false);
         GameMenu.SetActive(false);
         SummaryGUI.SetActive(true);
+
+        //Calculate Level End Reward
+        int stars = gameSceneController.getCurrentStar();
+        if (stars == 3)
+            fm.increaseMoney(1000);
+        else if (stars == 2)
+            fm.increaseMoney(400);
+        else if (stars == 1)
+            fm.increaseMoney(250);
+
+        //Persist balance into global
+        data.balance = fm.getBalance();
+
+
     }
 
     public void failGame()

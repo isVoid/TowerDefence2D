@@ -18,6 +18,9 @@ public class WaveSpawner : MonoBehaviour {
 
     private EnemyFactory factory;
     private GameFlow gameFlow;
+    private GameSceneController controller;
+
+    public float timeBeforeFirstWave = 10f;
 
     public float timeBetweenWaves = 10f;
     public int spawnNum = 1;
@@ -31,12 +34,20 @@ public class WaveSpawner : MonoBehaviour {
 	void Awake () {
         factory = EnemyFactory.getInstance();
         gameFlow = GameSceneController.getInstance() as GameFlow;
+        controller = GameSceneController.getInstance();
         waves = GameData.getInstance().waveLists;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+        if (timeBeforeFirstWave > 0)
+        {
+            timeBeforeFirstWave -= Time.deltaTime;
+            controller.updateCountDownUI(timeBeforeFirstWave);
+            return;
+        }
+
         if (currentWave == waves.Count && factory.allSpriteRecycled())
         {
             Debug.Log("Level Finish!");
