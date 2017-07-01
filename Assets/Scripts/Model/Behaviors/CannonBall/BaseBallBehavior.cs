@@ -30,7 +30,7 @@ public abstract class BaseBallBehavior : MonoBehaviour {
 
         if (Vector2.Distance(transform.position, targetPos) <= 0.2f)
         {
-            target.GetComponent<Enemy>().hp -= damage;
+            target.GetComponent<Enemy>().hpMinus(damage);
             CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
         }
     }

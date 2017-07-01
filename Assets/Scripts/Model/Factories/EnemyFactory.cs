@@ -155,7 +155,7 @@ public class EnemyFactory : System.Object {
             Vector2 ePos = enemy.transform.position;
             if (Vector2.Distance(damagePos, ePos) <= range)
             {
-                enemy.GetComponent<Enemy>().hp -= damage;
+                enemy.GetComponent<Enemy>().hpMinus(damage);
             }
         }
     }

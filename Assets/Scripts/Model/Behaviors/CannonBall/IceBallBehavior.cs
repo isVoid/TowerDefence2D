@@ -15,7 +15,7 @@ public class IceBallBehavior : BaseBallBehavior {
         if (Vector2.Distance(transform.position, targetPos) <= 0.2f)
         {
             target.GetComponent<Enemy>().applySlowBuf(slowTime, slowFactor);
-            target.GetComponent<Enemy>().hp -= damage;
+            target.GetComponent<Enemy>().hpMinus(damage);
             CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
         }
     }

@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>108</y>
+      <x>180</x>
+      <y>81</y>
       <w>117</w>
       <h>36</h>
     </coordinates>
@@ -17,8 +17,8 @@ EnemySpawner
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>225</y>
+      <x>180</x>
+      <y>198</y>
       <w>198</w>
       <h>72</h>
     </coordinates>
@@ -33,8 +33,8 @@ EnemyFactory
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>198</y>
+      <x>225</x>
+      <y>171</y>
       <w>27</w>
       <h>45</h>
     </coordinates>
@@ -44,8 +44,8 @@ EnemyFactory
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>333</y>
+      <x>90</x>
+      <y>306</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -57,8 +57,8 @@ Enemy1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>279</x>
-      <y>333</y>
+      <x>189</x>
+      <y>306</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -70,8 +70,8 @@ Enemy2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>369</x>
-      <y>333</y>
+      <x>279</x>
+      <y>306</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -83,8 +83,8 @@ Enemy3
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>459</x>
-      <y>333</y>
+      <x>369</x>
+      <y>306</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -96,8 +96,8 @@ Enemy4
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>207</x>
-      <y>288</y>
+      <x>117</x>
+      <y>261</y>
       <w>135</w>
       <h>63</h>
     </coordinates>
@@ -107,8 +107,8 @@ Enemy4
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>288</y>
+      <x>225</x>
+      <y>261</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -118,8 +118,8 @@ Enemy4
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>288</y>
+      <x>225</x>
+      <y>261</y>
       <w>117</w>
       <h>63</h>
     </coordinates>
@@ -129,8 +129,8 @@ Enemy4
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>288</y>
+      <x>225</x>
+      <y>261</y>
       <w>198</w>
       <h>63</h>
     </coordinates>
@@ -140,8 +140,8 @@ Enemy4
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>450</y>
+      <x>198</x>
+      <y>477</y>
       <w>144</w>
       <h>81</h>
     </coordinates>
@@ -154,54 +154,10 @@ Enemy
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>198</x>
-      <y>360</y>
-      <w>171</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>170.0;100.0;170.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>306</x>
-      <y>360</y>
-      <w>63</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>50.0;100.0;50.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>342</x>
-      <y>360</y>
-      <w>81</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;70.0;70.0;70.0;70.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>342</x>
-      <y>360</y>
-      <w>171</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;70.0;170.0;70.0;170.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>171</y>
+      <x>180</x>
+      <y>144</y>
       <w>117</w>
       <h>36</h>
     </coordinates>
@@ -213,8 +169,8 @@ WaveSpawner
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>135</y>
+      <x>225</x>
+      <y>108</y>
       <w>27</w>
       <h>54</h>
     </coordinates>
@@ -224,30 +180,30 @@ WaveSpawner
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>162</x>
-      <y>243</y>
-      <w>144</w>
-      <h>270</h>
+      <x>18</x>
+      <y>216</y>
+      <w>198</w>
+      <h>324</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;10.0;10.0;280.0;140.0;280.0</additional_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0;10.0;340.0;200.0;340.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>423</x>
-      <y>486</y>
+      <x>333</x>
+      <y>459</y>
       <w>117</w>
-      <h>27</h>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;10.0;60.0;10.0;60.0;70.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>522</x>
-      <y>459</y>
+      <x>432</x>
+      <y>432</y>
       <w>153</w>
       <h>63</h>
     </coordinates>
@@ -261,8 +217,8 @@ sufferDamage(int num)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>837</x>
-      <y>459</y>
+      <x>747</x>
+      <y>432</y>
       <w>162</w>
       <h>81</h>
     </coordinates>
@@ -277,8 +233,8 @@ CurrentStar : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>666</x>
-      <y>486</y>
+      <x>576</x>
+      <y>459</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -288,8 +244,8 @@ CurrentStar : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>711</x>
-      <y>477</y>
+      <x>621</x>
+      <y>450</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -299,8 +255,8 @@ CurrentStar : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>486</y>
+      <x>702</x>
+      <y>459</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -310,8 +266,8 @@ CurrentStar : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>513</y>
+      <x>495</x>
+      <y>486</y>
       <w>27</w>
       <h>63</h>
     </coordinates>
@@ -321,8 +277,8 @@ CurrentStar : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>513</x>
-      <y>558</y>
+      <x>423</x>
+      <y>531</y>
       <w>198</w>
       <h>54</h>
     </coordinates>
@@ -335,8 +291,8 @@ CurrentStar : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>603</y>
+      <x>495</x>
+      <y>576</y>
       <w>27</w>
       <h>72</h>
     </coordinates>
@@ -346,8 +302,8 @@ CurrentStar : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>657</y>
+      <x>441</x>
+      <y>630</y>
       <w>117</w>
       <h>45</h>
     </coordinates>
@@ -359,8 +315,8 @@ balance : int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>396</y>
+      <x>558</x>
+      <y>369</y>
       <w>144</w>
       <h>81</h>
     </coordinates>
@@ -370,8 +326,8 @@ balance : int</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>342</y>
+      <x>630</x>
+      <y>315</y>
       <w>198</w>
       <h>63</h>
     </coordinates>
@@ -385,8 +341,8 @@ updateStarView(int star) : void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>549</x>
-      <y>306</y>
+      <x>459</x>
+      <y>279</y>
       <w>153</w>
       <h>63</h>
     </coordinates>
@@ -400,8 +356,8 @@ updateStarView(int star) : void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
-      <y>360</y>
+      <x>486</x>
+      <y>333</y>
       <w>27</w>
       <h>117</h>
     </coordinates>
@@ -411,8 +367,8 @@ updateStarView(int star) : void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>378</x>
-      <y>180</y>
+      <x>288</x>
+      <y>153</y>
       <w>270</w>
       <h>144</h>
     </coordinates>
@@ -422,8 +378,8 @@ updateStarView(int star) : void</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>648</x>
-      <y>252</y>
+      <x>558</x>
+      <y>225</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -433,12 +389,45 @@ updateStarView(int star) : void</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>270</y>
+      <x>594</x>
+      <y>243</y>
       <w>27</w>
       <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>387</y>
+      <w>117</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Enemy1Behavior</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>117</x>
+      <y>333</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>405</y>
+      <w>153</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;80.0;150.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

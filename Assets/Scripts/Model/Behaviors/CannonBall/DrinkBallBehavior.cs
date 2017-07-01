@@ -14,7 +14,7 @@ public class DrinkBallBehavior : BaseBallBehavior {
         if (Vector2.Distance(transform.position, targetPos) <= 0.2f)
         {
             target.GetComponent<Enemy>().applyStunnBuf(stunnTime);
-            target.GetComponent<Enemy>().hp -= damage;
+            target.GetComponent<Enemy>().hpMinus(damage);
             CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
         }
     }

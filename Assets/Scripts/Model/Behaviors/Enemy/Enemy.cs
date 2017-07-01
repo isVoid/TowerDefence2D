@@ -10,7 +10,12 @@ public abstract class Enemy : MonoBehaviour {
     private GameSceneController controller;
     protected GameData data;
 
-    public float hp;
+    public GameObject healthBarPrefab;
+    private HealthBar healthBar;
+
+    protected float fullHP;
+    protected float hp;
+
     public float mySpeed;
     public int myValue;
 
@@ -24,11 +29,18 @@ public abstract class Enemy : MonoBehaviour {
 
         data = GameData.getInstance();
 
+        healthBar = GetComponentInChildren<HealthBar>();
+
         loadEnemyData();
+
+        fullHP = hp;
+        GameObject hb = Instantiate(healthBarPrefab, transform);
+        hb.transform.localPosition = new Vector3(0, 0.4f, -1);
+
+        healthBar = hb.GetComponent<HealthBar>();
+        healthBar.FullHealth = fullHP;
 	}
 	
-    protected abstract void loadEnemyData();
-
 	// Update is called once per frame
 	void Update () {
 		
@@ -49,6 +61,29 @@ public abstract class Enemy : MonoBehaviour {
         updateBufTint();
 
 	}
+
+    public float getHP()
+    {
+        return hp;
+    }
+
+    public void sethp(float _hp)
+    {
+        hp = _hp;
+        healthBar.updateHealthBar(hp);
+    }
+
+    public void hpMinus(float dmg)
+    {
+        sethp(hp - dmg);
+    }
+
+    public void hpPlus(float health)
+    {
+        sethp(hp + health);
+    }
+
+    protected abstract void loadEnemyData();
 
     void GetNextWaypoint()
     {
