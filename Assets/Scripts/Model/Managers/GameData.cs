@@ -62,6 +62,8 @@ public class GameData {
     public float[] EnemySpeed = { 0.2f, 0.4f, 0.8f, 1.0f};
 
     public int totalLevel = 1;
+    public float[] LevelTime = { 90f };
+    public int[] LevelStar = { 0 };
 
     public List<Wave> waveLists = new List<Wave>(); 
 

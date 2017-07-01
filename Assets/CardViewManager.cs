@@ -6,6 +6,7 @@ public class CardViewManager : MonoBehaviour {
 
     public GameObject cardGroup;
 	
+    GameData data;
     bool clicked = false;
     Vector3 prevMousePos;
 
@@ -23,6 +24,23 @@ public class CardViewManager : MonoBehaviour {
         maxLevel = cardGroup.transform.childCount;
         leftMargin = cardWidth / 2;
         rightMargin = -((cardWidth / 2) + slotWidth * (maxLevel-1));
+
+        data = GameData.getInstance();
+    }
+
+    void Start()
+    {
+        UIStarManager[] starManagers = GetComponentsInChildren<UIStarManager>();
+        if (starManagers.Length != data.LevelStar.Length)
+        {
+            Debug.Log("Level Length Inconsistent!");
+            return;
+        }
+        //Update Star Views according to user previous data.
+        for (int i = 0; i < starManagers.Length; i++)
+        {
+            starManagers[i].updateStarView(data.LevelStar[i]);
+        }
     }
 
     void Update()

@@ -6,7 +6,7 @@ public class GamePointManager : System.Object {
 
     private static GamePointManager instance;
     private GamePointManager() {
-
+        CurrentStar = 3;
     }
     public static GamePointManager getInstance()
     {
@@ -15,6 +15,11 @@ public class GamePointManager : System.Object {
             instance = new GamePointManager();
         }
         return instance;
+    }
+
+    public void resetStar()
+    {
+        CurrentStar = 3;
     }
 
     public int CurrentStar = 3;

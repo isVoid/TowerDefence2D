@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState{ Paused, Running }
+public enum GameState{ Paused, Running, Win, Fail }
 
 public class GameStatus : MonoBehaviour {
     private GameSceneController gameSceneController;
@@ -20,21 +20,19 @@ public class GameStatus : MonoBehaviour {
         gameState = GameState.Running;
 
         gamePointManager = GamePointManager.getInstance();
+        gamePointManager.resetStar();
     }
 	
 	void Update () {
-		
+        
 	}
 
     public GameState getGameState() {
         return gameState;
     }
 
-    public void switchGameState() {
-        if (gameState == GameState.Running)
-            gameState = GameState.Paused;
-        else if (gameState == GameState.Paused)
-            gameState = GameState.Running;
+    public void switchGameState(GameState state) {
+        gameState = state;
     }
 
     public void setClickedStubIndex(int index) {

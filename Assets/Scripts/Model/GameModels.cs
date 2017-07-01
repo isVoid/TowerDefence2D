@@ -31,7 +31,7 @@ public class GameModels : MonoBehaviour {
 
     private GameSceneController gameSceneController;
 
-    private float timeScale;
+    public float timeScale;
 
     void Awake() {
 
@@ -60,10 +60,16 @@ public class GameModels : MonoBehaviour {
         data.initLevelData(level);
 
         fm.setBalance(data.balance);
+
+        Time.timeScale = 1;
+        timeScale = Time.timeScale;
     }
 	
-	void Update () {
-		
+	void Update () {     
+        if (gameSceneController.getGameState() == GameState.Running)
+        {
+            Time.timeScale = timeScale;
+        }
 	}
 
     public void pauseGame()
@@ -94,6 +100,9 @@ public class GameModels : MonoBehaviour {
 
         //Calculate Level End Reward
         int stars = gameSceneController.getCurrentStar();
+
+        //TODO: [?] Determine if the player should be rewarded with/or without previous star count?
+
         if (stars == 3)
             fm.increaseMoney(1000);
         else if (stars == 2)
@@ -103,7 +112,8 @@ public class GameModels : MonoBehaviour {
 
         //Persist balance into global
         data.balance = fm.getBalance();
-
+        //Persist stars into global
+        data.LevelStar[level] = stars;
 
     }
 
@@ -112,8 +122,8 @@ public class GameModels : MonoBehaviour {
         enemySpawner.SetActive(false);
         GameMenu.SetActive(false);
         SummaryGUI.SetActive(true);
-        Debug.Log(SummaryGUI.transform.GetChild(1).GetComponent<Text>().text);
-        SummaryGUI.transform.GetChild(1).GetComponent<Text>().text = "失败！";
+//        Debug.Log(SummaryGUI.transform.GetChild(1).GetComponent<Text>().text);
+//        SummaryGUI.transform.GetChild(1).GetComponent<Text>().text = "失败！";
     }
 
     public void setBuildBtnGroupPos(int stubIndex) {

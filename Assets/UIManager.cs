@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
     public UIStarManager starManager;
+    public SummaryUIManager summaryManager;
     public Text countdownUI;
     public Text currentMoneyUI;
 
@@ -22,17 +23,30 @@ public class UIManager : MonoBehaviour {
         starManager.updateStarView(stars);
     }
 
+    public void updateOnWin()
+    {
+        updateStarViewOnGameFinish();
+        summaryManager.showWin();
+    }
+
+    public void updateOnLose()
+    {
+        updateStarViewOnGameFinish();
+        summaryManager.showLose();
+    }
+
     public void updateStarViewOnGameFinish()
     {
         starManager.updateStarViewOnGameFinish();
     }
 
-    public void updateCountDownUI(float countDownSec)
+    public void updateCountDownUI(string countdownInfo)
     {
-        if (countDownSec > 0)
-            countdownUI.text = "First Wave: " + countDownSec.ToString("F1");
-        else
-            countdownUI.gameObject.SetActive(false);
+//        if (countDownSec > 0)
+//            countdownUI.text = "First Wave: " + countDownSec.ToString("F1");
+//        else
+//            countdownUI.gameObject.SetActive(false);
+        countdownUI.text = countdownInfo;
     }
 
     public void updateBalanceValue(int value)

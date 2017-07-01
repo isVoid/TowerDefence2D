@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour {
         if (timeBeforeFirstWave > 0)
         {
             timeBeforeFirstWave -= Time.deltaTime;
-            controller.updateCountDownUI(timeBeforeFirstWave);
+            controller.updateCountDownUI("First Wave: " + timeBeforeFirstWave.ToString("F1") + "s");
             return;
         }
 

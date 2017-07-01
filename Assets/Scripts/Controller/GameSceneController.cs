@@ -53,7 +53,7 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     {
         if (myGameStatus.getGameState() == GameState.Paused)
         {
-            myGameStatus.switchGameState();
+            myGameStatus.switchGameState(GameState.Running);
             myGameModels.startGame();
         }
     }
@@ -62,7 +62,7 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     {
         if (myGameStatus.getGameState() == GameState.Running)
         {
-            myGameStatus.switchGameState();
+            myGameStatus.switchGameState(GameState.Paused);
             myGameModels.pauseGame();
         }
     }
@@ -71,9 +71,9 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     {
         if (myGameStatus.getGameState() == GameState.Running)
         {
-            myGameStatus.switchGameState();
+            myGameStatus.switchGameState(GameState.Win);
             myGameModels.endGame();
-            myUIManager.updateStarViewOnGameFinish();
+            myUIManager.updateOnWin();
 
             enemyFactory.wipeFactory();
             cannonBallFactory.wipeFactory();
@@ -84,9 +84,9 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     {
         if (myGameStatus.getGameState() == GameState.Running)
         {
-            myGameStatus.switchGameState();
+            myGameStatus.switchGameState(GameState.Fail);
             myGameModels.failGame();
-            myUIManager.updateStarViewOnGameFinish();
+            myUIManager.updateOnLose();
 
             enemyFactory.wipeFactory();
             cannonBallFactory.wipeFactory();
@@ -161,14 +161,24 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
         return myGameStatus.getCurrentStar();
     }
 
-    public void updateCountDownUI(float countDownSec)
+    public void updateCountDownUI(string countDownInfo)
     {
-        myUIManager.updateCountDownUI(countDownSec);
+        myUIManager.updateCountDownUI(countDownInfo);
     }
 
     public void updateMoneyUI(int balance)
     {
         myUIManager.updateBalanceValue(balance);
+    }
+
+    public GameState getGameState()
+    {
+        return myGameStatus.getGameState();
+    }
+
+    public int getLevel()
+    {
+        return myGameModels.level;
     }
 
 }
