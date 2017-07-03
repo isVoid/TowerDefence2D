@@ -4,13 +4,17 @@ using UnityEngine;
 
 public struct Wave
 {
-    public int enemyCount;
+    public List<int> enemyCount;
     public List<EnemyType> enemyType;
+    public float spawnInterval;
+    public float timeToNextWave;
 
-    public Wave(int c, List<EnemyType> t) 
+    public Wave(List<int> c, List<EnemyType> t, float itvl, float ttnw) 
     {
         enemyCount = c;
         enemyType = t;
+        spawnInterval = itvl;
+        timeToNextWave = ttnw;
     }
 }
 
@@ -23,7 +27,6 @@ public class WaveSpawner : MonoBehaviour {
     public float timeBeforeFirstWave = 10f;
 
     public float timeBetweenWaves = 10f;
-    public int spawnNum = 1;
     public float countdown = 0f;
 
     public int currentWave = 0;
@@ -35,9 +38,17 @@ public class WaveSpawner : MonoBehaviour {
         factory = EnemyFactory.getInstance();
         gameFlow = GameSceneController.getInstance() as GameFlow;
         controller = GameSceneController.getInstance();
-        waves = GameData.getInstance().waveLists;
+
 	}
 	
+    void Start()
+    {
+        waves = GameData.getInstance().waveLists;
+
+        Debug.Log(waves.Count + " waves to spawn.");
+
+    }
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -63,7 +74,7 @@ public class WaveSpawner : MonoBehaviour {
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
+            countdown = waves[currentWave].timeToNextWave;
 
         }
 
@@ -73,26 +84,29 @@ public class WaveSpawner : MonoBehaviour {
 
     IEnumerator SpawnWave()
     {
-        Debug.Log(waves[currentWave].enemyCount);
-        for (int i = 0; i < waves[currentWave].enemyCount; i++)
+        for (int i = 0; i < waves[currentWave].enemyType.Count; i++)
         {
-            Debug.Log("Spawning: " + waves[currentWave].enemyType[i]);
-            switch (waves[currentWave].enemyType[i])
+            Debug.Log(waves[currentWave].enemyType.Count);
+            for (int j = 0; j < waves[currentWave].enemyCount[i]; j++)
             {
-                case EnemyType.Enemy1:
-                    factory.spawn(EnemyType.Enemy1);
-                    break;
-                case EnemyType.Enemy2:
-                    factory.spawn(EnemyType.Enemy2);
-                    break;
-                case EnemyType.Enemy3:
-                    factory.spawn(EnemyType.Enemy3);
-                    break;
-                case EnemyType.Enemy4:
-                    factory.spawn(EnemyType.Enemy4);
-                    break;
+                Debug.Log("Spawning: "+ j + "/" + waves[currentWave].enemyCount[i] + " of " + waves[currentWave].enemyType[i]);
+                switch (waves[currentWave].enemyType[i])
+                {
+                    case EnemyType.Enemy1:
+                        factory.spawn(EnemyType.Enemy1);
+                        break;
+                    case EnemyType.Enemy2:
+                        factory.spawn(EnemyType.Enemy2);
+                        break;
+                    case EnemyType.Enemy3:
+                        factory.spawn(EnemyType.Enemy3);
+                        break;
+                    case EnemyType.Enemy4:
+                        factory.spawn(EnemyType.Enemy4);
+                        break;
+                }
+                yield return new WaitForSeconds(waves[currentWave].spawnInterval);
             }
-            yield return new WaitForSeconds(1f);
         }
             
         currentWave++;

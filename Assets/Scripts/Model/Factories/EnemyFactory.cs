@@ -57,6 +57,7 @@ public class EnemyFactory : System.Object {
 
     public void spawn(EnemyType type) {
 
+        Debug.Log("Factory: Spawning " + type );
         switch (type)
         {
             case EnemyType.Enemy1:  
@@ -77,7 +78,8 @@ public class EnemyFactory : System.Object {
 
     private void spawnImpl(GameObject Enemy, List<GameObject> usingEnemyList, List<GameObject> unusedEnemyList)
     {
-        if (usingEnemyList.Count == 0)
+        //If no spawned unactive gameobject, instantiate new.
+        if (unusedEnemyList.Count == 0)
         {
             GameObject newEnemy = Camera.Instantiate(Enemy, waypointManager.getStart().position, waypointManager.getStart().rotation);
             usingEnemyList.Add(newEnemy);
