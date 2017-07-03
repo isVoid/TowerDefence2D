@@ -51,6 +51,15 @@ public class EnemyFactory : System.Object {
 
     public void wipeFactory()
     {
+        List<GameObject> ListOfAllEnemies = new List<GameObject>();
+        ListOfAllEnemies.AddRange(getAllActiveEnemies());
+        ListOfAllEnemies.AddRange(getAllUnActiveEnemies());
+
+        foreach (GameObject e in ListOfAllEnemies)
+        {
+            Camera.Destroy(e);
+        }
+
         usingEnemy1List.Clear();
         unusedEnemy1List.Clear();
 
@@ -172,6 +181,21 @@ public class EnemyFactory : System.Object {
         allEnemies.AddRange(usingExchangeList);
 
         return allEnemies;
+    }
+
+    public List<GameObject> getAllUnActiveEnemies()
+    {
+        List<GameObject> allUnactiveEnemies = new List<GameObject>();
+
+        allUnactiveEnemies.AddRange(unusedEnemy1List);
+        allUnactiveEnemies.AddRange(unusedEnemy2List);
+        allUnactiveEnemies.AddRange(unusedEnemy3List);
+        allUnactiveEnemies.AddRange(unusedEnemy4List);
+        allUnactiveEnemies.AddRange(unusedPostGradList);
+        allUnactiveEnemies.AddRange(unusedExchangeList);
+
+        return allUnactiveEnemies;
+
     }
 
     public bool allSpriteRecycled()

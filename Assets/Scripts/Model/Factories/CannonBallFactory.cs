@@ -27,6 +27,12 @@ public class CannonBallFactory : System.Object {
 
     public void wipeFactory()
     {
+        List<GameObject> cannonBalls = getAllCannonBalls();
+        foreach (GameObject b in cannonBalls)
+        {
+            Camera.Destroy(b);
+        }
+
         usingGuandongBallList.Clear();
         unusedGuandongBallList.Clear();
 
@@ -137,5 +143,27 @@ public class CannonBallFactory : System.Object {
             unusedBallList.Add(usingBallList[index]);
             usingBallList.RemoveAt(index);
         }
+    }
+
+    public List<GameObject> getAllCannonBalls()
+    {
+        List<GameObject> allBalls = new List<GameObject>();
+
+        allBalls.AddRange(usingGuandongBallList);
+        allBalls.AddRange(unusedGuandongBallList);
+
+        allBalls.AddRange(usingMelonBallList);
+        allBalls.AddRange(unusedMelonBallList);
+
+        allBalls.AddRange(usingIceBallList);
+        allBalls.AddRange(unusedIceBallList);
+
+        allBalls.AddRange(usingPizzaBallList);
+        allBalls.AddRange(unusedPizzaBallList);
+
+        allBalls.AddRange(usingDrinkBallList);
+        allBalls.AddRange(unusedDrinkBallList);
+
+        return allBalls;
     }
 }

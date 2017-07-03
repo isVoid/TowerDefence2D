@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>680</x>
-      <y>110</y>
+      <y>80</y>
       <w>80</w>
       <h>40</h>
     </coordinates>
@@ -18,7 +18,7 @@ Enemy#
     <id>UMLClass</id>
     <coordinates>
       <x>350</x>
-      <y>410</y>
+      <y>380</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -31,7 +31,7 @@ Enemy
     <id>Relation</id>
     <coordinates>
       <x>490</x>
-      <y>140</y>
+      <y>110</y>
       <w>230</w>
       <h>90</h>
     </coordinates>
@@ -43,7 +43,7 @@ Enemy
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>250</y>
+      <y>220</y>
       <w>90</w>
       <h>30</h>
     </coordinates>
@@ -54,7 +54,7 @@ Enemy
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>440</y>
+      <y>410</y>
       <w>30</w>
       <h>410</h>
     </coordinates>
@@ -65,7 +65,7 @@ Enemy
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>520</y>
+      <y>490</y>
       <w>240</w>
       <h>40</h>
     </coordinates>
@@ -77,7 +77,7 @@ Instantiate()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>570</x>
-      <y>410</y>
+      <y>380</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -90,7 +90,7 @@ HealthBar
     <id>UMLClass</id>
     <coordinates>
       <x>780</x>
-      <y>410</y>
+      <y>380</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -103,7 +103,7 @@ HealthBar
     <id>Relation</id>
     <coordinates>
       <x>730</x>
-      <y>140</y>
+      <y>110</y>
       <w>80</w>
       <h>80</h>
     </coordinates>
@@ -115,7 +115,7 @@ has a v</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>430</x>
-      <y>730</y>
+      <y>700</y>
       <w>460</w>
       <h>40</h>
     </coordinates>
@@ -127,7 +127,7 @@ UpdateHealthBar()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>290</x>
-      <y>700</y>
+      <y>670</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -139,7 +139,7 @@ SetHealth()</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>420</x>
-      <y>710</y>
+      <y>680</y>
       <w>20</w>
       <h>60</h>
     </coordinates>
@@ -150,7 +150,7 @@ SetHealth()</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>300</y>
+      <y>270</y>
       <w>230</w>
       <h>180</h>
     </coordinates>
@@ -171,7 +171,7 @@ n为Enemy Prefab的个数
     <id>Relation</id>
     <coordinates>
       <x>640</x>
-      <y>440</y>
+      <y>410</y>
       <w>30</w>
       <h>420</h>
     </coordinates>
@@ -182,7 +182,7 @@ n为Enemy Prefab的个数
     <id>Relation</id>
     <coordinates>
       <x>300</x>
-      <y>480</y>
+      <y>450</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -194,7 +194,7 @@ Start()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>420</x>
-      <y>210</y>
+      <y>180</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -207,7 +207,7 @@ Enemy
     <id>UMLClass</id>
     <coordinates>
       <x>660</x>
-      <y>200</y>
+      <y>170</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -220,7 +220,7 @@ HealthBar
     <id>UMLClass</id>
     <coordinates>
       <x>660</x>
-      <y>280</y>
+      <y>250</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -233,7 +233,7 @@ HealthBar
     <id>Relation</id>
     <coordinates>
       <x>730</x>
-      <y>230</y>
+      <y>200</y>
       <w>80</w>
       <h>70</h>
     </coordinates>
@@ -245,7 +245,7 @@ has a v</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>640</x>
-      <y>520</y>
+      <y>490</y>
       <w>20</w>
       <h>80</h>
     </coordinates>
@@ -256,7 +256,7 @@ has a v</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>650</x>
-      <y>540</y>
+      <y>510</y>
       <w>240</w>
       <h>40</h>
     </coordinates>
@@ -268,7 +268,7 @@ Create</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>860</x>
-      <y>440</y>
+      <y>410</y>
       <w>30</w>
       <h>420</h>
     </coordinates>
@@ -279,7 +279,7 @@ Create</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>560</y>
+      <y>530</y>
       <w>240</w>
       <h>40</h>
     </coordinates>
@@ -291,7 +291,7 @@ HealthBar:GameObject</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>620</y>
+      <y>590</y>
       <w>240</w>
       <h>40</h>
     </coordinates>
@@ -303,7 +303,7 @@ GetComponent&lt;HealthBar&gt;()</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>640</x>
-      <y>620</y>
+      <y>590</y>
       <w>20</w>
       <h>60</h>
     </coordinates>
@@ -314,7 +314,7 @@ GetComponent&lt;HealthBar&gt;()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>650</y>
+      <y>620</y>
       <w>240</w>
       <h>40</h>
     </coordinates>
@@ -326,7 +326,7 @@ HealthBar:MonoBehavior</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>630</x>
-      <y>90</y>
+      <y>60</y>
       <w>210</w>
       <h>160</h>
     </coordinates>
@@ -338,7 +338,7 @@ HealthBar:MonoBehavior</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>830</x>
-      <y>70</y>
+      <y>40</y>
       <w>180</w>
       <h>120</h>
     </coordinates>
@@ -350,7 +350,7 @@ HealthBar:MonoBehavior</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>990</x>
-      <y>30</y>
+      <y>0</y>
       <w>140</w>
       <h>50</h>
     </coordinates>

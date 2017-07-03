@@ -4,7 +4,7 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>301</x>
+      <x>238</x>
       <y>546</y>
       <w>98</w>
       <h>28</h>
@@ -16,7 +16,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
+      <x>287</x>
       <y>567</y>
       <w>21</w>
       <h>315</h>
@@ -27,7 +27,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>427</x>
+      <x>364</x>
       <y>553</y>
       <w>77</w>
       <h>21</h>
@@ -38,7 +38,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>532</x>
+      <x>469</x>
       <y>553</y>
       <w>105</w>
       <h>21</h>
@@ -49,7 +49,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
+      <x>399</x>
       <y>567</y>
       <w>21</w>
       <h>315</h>
@@ -60,7 +60,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
+      <x>518</x>
       <y>567</y>
       <w>21</w>
       <h>315</h>
@@ -71,7 +71,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>658</x>
+      <x>595</x>
       <y>553</y>
       <w>105</w>
       <h>21</h>
@@ -82,7 +82,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>707</x>
+      <x>644</x>
       <y>567</y>
       <w>21</w>
       <h>315</h>
@@ -93,7 +93,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>882</x>
+      <x>819</x>
       <y>553</y>
       <w>105</w>
       <h>21</h>
@@ -104,7 +104,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>931</x>
+      <x>868</x>
       <y>567</y>
       <w>21</w>
       <h>315</h>
@@ -115,7 +115,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>259</x>
+      <x>196</x>
       <y>588</y>
       <w>112</w>
       <h>28</h>
@@ -127,7 +127,7 @@ Click()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
+      <x>287</x>
       <y>616</y>
       <w>133</w>
       <h>28</h>
@@ -139,7 +139,7 @@ OnGUIButtonClick()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
+      <x>399</x>
       <y>644</y>
       <w>140</w>
       <h>28</h>
@@ -151,7 +151,7 @@ BuildIceTower()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
+      <x>518</x>
       <y>665</y>
       <w>140</w>
       <h>28</h>
@@ -163,7 +163,7 @@ BuildIceTower()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>770</x>
+      <x>707</x>
       <y>553</y>
       <w>105</w>
       <h>21</h>
@@ -174,7 +174,7 @@ BuildIceTower()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>819</x>
+      <x>756</x>
       <y>567</y>
       <w>21</w>
       <h>315</h>
@@ -185,7 +185,7 @@ BuildIceTower()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>707</x>
+      <x>644</x>
       <y>672</y>
       <w>14</w>
       <h>147</h>
@@ -196,7 +196,7 @@ BuildIceTower()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
+      <x>525</x>
       <y>693</y>
       <w>133</w>
       <h>28</h>
@@ -208,7 +208,7 @@ getChosenStubNum()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>581</x>
+      <x>518</x>
       <y>700</y>
       <w>14</w>
       <h>105</h>
@@ -219,7 +219,7 @@ getChosenStubNum()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
+      <x>525</x>
       <y>728</y>
       <w>245</w>
       <h>28</h>
@@ -231,7 +231,7 @@ getChosenStubNum()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>819</x>
+      <x>756</x>
       <y>728</y>
       <w>14</w>
       <h>49</h>
@@ -242,7 +242,7 @@ getChosenStubNum()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
+      <x>525</x>
       <y>749</y>
       <w>245</w>
       <h>28</h>
@@ -254,7 +254,7 @@ chosenStubNum:int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
+      <x>525</x>
       <y>777</y>
       <w>133</w>
       <h>28</h>
@@ -266,7 +266,7 @@ chosenStubNum:int</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>714</x>
+      <x>651</x>
       <y>791</y>
       <w>238</w>
       <h>28</h>
@@ -278,7 +278,7 @@ buildIceTower()</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>63</x>
+      <x>0</x>
       <y>553</y>
       <w>98</w>
       <h>49</h>
@@ -290,7 +290,7 @@ buildIceTower()</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>294</x>
+      <x>231</x>
       <y>0</y>
       <w>98</w>
       <h>28</h>
@@ -302,7 +302,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>308</x>
+      <x>245</x>
       <y>56</y>
       <w>77</w>
       <h>21</h>
@@ -313,7 +313,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>476</x>
+      <x>413</x>
       <y>119</y>
       <w>119</w>
       <h>21</h>
@@ -324,7 +324,7 @@ BuildIceTowerButton</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>357</x>
+      <x>294</x>
       <y>112</y>
       <w>70</w>
       <h>35</h>
@@ -337,7 +337,7 @@ m1=require
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>308</x>
+      <x>245</x>
       <y>112</y>
       <w>70</w>
       <h>21</h>
@@ -348,7 +348,7 @@ m1=require
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>413</x>
+      <x>350</x>
       <y>112</y>
       <w>77</w>
       <h>35</h>
@@ -361,7 +361,7 @@ m2=provide
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>630</x>
+      <x>567</x>
       <y>105</y>
       <w>140</w>
       <h>35</h>
@@ -375,7 +375,7 @@ List&lt;GameObject&gt; stubList
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>476</x>
+      <x>413</x>
       <y>49</y>
       <w>119</w>
       <h>35</h>
@@ -389,7 +389,7 @@ chosenStubNum : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>329</x>
+      <x>266</x>
       <y>21</y>
       <w>42</w>
       <h>49</h>
@@ -401,7 +401,7 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>329</x>
+      <x>266</x>
       <y>70</y>
       <w>21</w>
       <h>56</h>
@@ -412,7 +412,7 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>525</x>
+      <x>462</x>
       <y>77</y>
       <w>21</w>
       <h>56</h>
@@ -423,7 +423,7 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
+      <x>525</x>
       <y>126</y>
       <w>56</w>
       <h>21</h>
@@ -434,7 +434,7 @@ has a</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>679</x>
+      <x>616</x>
       <y>14</y>
       <w>70</w>
       <h>21</h>
@@ -445,7 +445,7 @@ has a</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>791</x>
+      <x>728</x>
       <y>7</y>
       <w>119</w>
       <h>35</h>
@@ -459,7 +459,7 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>707</x>
+      <x>644</x>
       <y>28</y>
       <w>21</w>
       <h>91</h>
@@ -470,7 +470,7 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>742</x>
+      <x>679</x>
       <y>14</y>
       <w>63</w>
       <h>28</h>
@@ -482,7 +482,7 @@ has a</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>294</x>
+      <x>231</x>
       <y>189</y>
       <w>98</w>
       <h>28</h>
@@ -494,7 +494,7 @@ Stub</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
+      <x>273</x>
       <y>210</y>
       <w>21</w>
       <h>245</h>
@@ -505,7 +505,7 @@ Stub</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>413</x>
+      <x>350</x>
       <y>196</y>
       <w>98</w>
       <h>21</h>
@@ -516,7 +516,7 @@ Stub</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>560</x>
+      <x>497</x>
       <y>196</y>
       <w>112</w>
       <h>21</h>
@@ -527,18 +527,18 @@ Stub</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>700</x>
+      <x>679</x>
       <y>196</y>
       <w>112</w>
       <h>21</h>
     </coordinates>
-    <panel_attributes>GameStatus</panel_attributes>
+    <panel_attributes>GameModels</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>455</x>
+      <x>392</x>
       <y>210</y>
       <w>21</w>
       <h>245</h>
@@ -549,7 +549,7 @@ Stub</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>609</x>
+      <x>546</x>
       <y>210</y>
       <w>21</w>
       <h>245</h>
@@ -560,7 +560,7 @@ Stub</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>763</x>
+      <x>742</x>
       <y>210</y>
       <w>21</w>
       <h>245</h>
@@ -571,7 +571,7 @@ Stub</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>217</x>
+      <x>154</x>
       <y>231</y>
       <w>140</w>
       <h>28</h>
@@ -583,7 +583,7 @@ OnClick()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
+      <x>273</x>
       <y>259</y>
       <w>140</w>
       <h>28</h>
@@ -595,7 +595,7 @@ OnGUIButtonClick()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>455</x>
+      <x>392</x>
       <y>287</y>
       <w>175</w>
       <h>28</h>
@@ -607,7 +607,7 @@ SetClickedStubIndex(index : int)</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>154</x>
+      <x>91</x>
       <y>56</y>
       <w>98</w>
       <h>28</h>
@@ -619,7 +619,7 @@ Stub</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>245</x>
+      <x>182</x>
       <y>56</y>
       <w>77</w>
       <h>28</h>
@@ -631,25 +631,83 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>609</x>
+      <x>546</x>
       <y>315</y>
-      <w>175</w>
+      <w>210</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 SetClickedStubIndex(index : int)</panel_attributes>
-    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>63</x>
+      <x>0</x>
       <y>189</y>
       <w>98</w>
       <h>49</h>
     </coordinates>
     <panel_attributes>点击桩，记录点击
-的桩号</panel_attributes>
+的桩号，显示建造
+菜单</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>742</x>
+      <y>315</y>
+      <w>14</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>336</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+setBuildBtnGroupPos(stubIndex:int)</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>812</x>
+      <y>196</y>
+      <w>112</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>GameModels</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>861</x>
+      <y>210</y>
+      <w>21</w>
+      <h>245</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>371</y>
+      <w>336</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+setBuildBtnGroupPos(stubIndex:int)</panel_attributes>
+    <additional_attributes>460.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
