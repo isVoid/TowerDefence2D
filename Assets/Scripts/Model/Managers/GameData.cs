@@ -62,7 +62,7 @@ public class GameData {
     public float[] EnemySpeed = { 0.2f, 0.4f, 0.8f, 1.5f, 1.5f, 0.5f };
 
     public int totalLevel = 1;
-    public float[] LevelTime = { 90f };
+    public float[] LevelTime = { 140f };
     public int[] LevelStar = { 0 };
 
     public List<Wave> waveLists = new List<Wave>(); 
@@ -119,7 +119,7 @@ public class GameData {
             */
 
             List<EnemyType> t3 = new List<EnemyType> {EnemyType.Enemy1, EnemyType.Enemy4};
-            List<int> c3 = new List<int> { 12, 4 };
+            List<int> c3 = new List<int> { 8, 5 };
             float sItvl3 = 0.5f;
             float ttnw3 = 25;
             Wave wave3 = new Wave(c3, t3, sItvl3, ttnw3);
@@ -131,8 +131,8 @@ public class GameData {
              * Time to next Wave: 30s;
             */
 
-            List<EnemyType> t4 = new List<EnemyType> {EnemyType.Enemy1, EnemyType.Enemy4};
-            List<int> c4 = new List<int> { 12, 4 };
+            List<EnemyType> t4 = new List<EnemyType> {EnemyType.PostGrad, EnemyType.Exchange, EnemyType.Enemy3};
+            List<int> c4 = new List<int> { 1, 3, 5 };
             float sItvl4 = 0.5f;
             float ttnw4 = 30;
             Wave wave4 = new Wave(c4, t4, sItvl4, ttnw4);

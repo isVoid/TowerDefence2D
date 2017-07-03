@@ -138,7 +138,9 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
     }
 
     public void sellTower() {
+
         myGameModels.sellTower();
+        myGameStatus.resetClickedTowerIndex();
     }
 
     public void upgradeTower() {

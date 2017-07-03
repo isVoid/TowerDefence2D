@@ -21,24 +21,30 @@ public abstract class Enemy : MonoBehaviour {
 
     private int waypointIndex = 0;
 
-	// Use this for initialization
-	void Start () {
-        target = WaypointManager.waypoints[0];
+    void Awake()
+    {
+        GameObject hb = Instantiate(healthBarPrefab, transform);
+        hb.transform.localPosition = new Vector3(0, 0.4f, -1);
+
+        healthBar = GetComponentInChildren<HealthBar>();
+
         enemyFactory = EnemyFactory.getInstance();
         controller = GameSceneController.getInstance();
 
         data = GameData.getInstance();
 
-        healthBar = GetComponentInChildren<HealthBar>();
-
         loadEnemyData();
 
         fullHP = hp;
-        GameObject hb = Instantiate(healthBarPrefab, transform);
-        hb.transform.localPosition = new Vector3(0, 0.4f, -1);
-
-        healthBar = hb.GetComponent<HealthBar>();
         healthBar.FullHealth = fullHP;
+    }
+
+	// Use this for initialization
+	void OnEnable () {
+        
+        target = WaypointManager.waypoints[0];
+        healthBar.hideHealthBar();
+
 	}
 	
 	// Update is called once per frame
@@ -99,8 +105,16 @@ public abstract class Enemy : MonoBehaviour {
 
     void destroy(){
         //Reset
-        hp = 100;
+        hp = fullHP;
         waypointIndex = 0;
+
+        if (GetComponent<BleedBuf>() != null)
+            Destroy(GetComponent<BleedBuf>());
+        if (GetComponent<SlowBuf>() != null)
+            Destroy(GetComponent<SlowBuf>());
+        if (GetComponent<StunBuf>() != null)
+            Destroy(GetComponent<StunBuf>());
+
         //Recycle
         enemyFactory.recycle(transform.gameObject);
     }

@@ -1,59 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.1.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>370</y>
-      <w>160</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;prefab&gt;&gt;
-Enemy{1,2,3,4}
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>380</x>
-      <y>400</y>
-      <w>160</w>
-      <h>110</h>
+      <x>408</x>
+      <y>552</y>
+      <w>128</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
 SlowBuf
---
-Start()
-OnDestroy()
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>330</y>
-      <w>160</w>
-      <h>90</h>
+      <x>624</x>
+      <y>472</y>
+      <w>128</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
 BaseBuf
 --
-remainTime : float
---
-+ Update() : void
+remainTime
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>250</y>
-      <w>160</w>
-      <h>40</h>
+      <x>408</x>
+      <y>408</y>
+      <w>128</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
 BleedBuf
@@ -63,10 +46,10 @@ BleedBuf
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>320</y>
-      <w>160</w>
-      <h>40</h>
+      <x>408</x>
+      <y>464</y>
+      <w>128</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
 StunBuf
@@ -76,10 +59,10 @@ StunBuf
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>280</y>
-      <w>160</w>
-      <h>40</h>
+      <x>272</x>
+      <y>72</y>
+      <w>128</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
 Enemy
@@ -89,34 +72,10 @@ Enemy
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>310</y>
-      <w>60</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-has a</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>190</x>
-      <y>330</y>
-      <w>210</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-(2)has a</panel_attributes>
-    <additional_attributes>190.0;10.0;80.0;10.0;80.0;60.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>530</x>
-      <y>260</y>
-      <w>140</w>
-      <h>110</h>
+      <x>528</x>
+      <y>416</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;90.0;60.0;90.0;60.0;10.0;10.0;10.0</additional_attributes>
@@ -124,10 +83,10 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
-      <y>330</y>
-      <w>140</w>
-      <h>40</h>
+      <x>528</x>
+      <y>472</y>
+      <w>112</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>120.0;20.0;60.0;20.0;60.0;10.0;10.0;10.0</additional_attributes>
@@ -135,61 +94,155 @@ has a</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
-      <y>340</y>
-      <w>140</w>
-      <h>100</h>
+      <x>528</x>
+      <y>480</y>
+      <w>112</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;60.0;10.0;60.0;80.0;10.0;80.0</additional_attributes>
+    <additional_attributes>120.0;10.0;60.0;10.0;60.0;110.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>260</y>
-      <w>210</w>
-      <h>60</h>
+      <x>328</x>
+      <y>96</y>
+      <w>24</w>
+      <h>240</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-(3)influence</panel_attributes>
-    <additional_attributes>10.0;40.0;100.0;40.0;100.0;10.0;190.0;10.0</additional_attributes>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
+    <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>310</y>
-      <w>110</w>
-      <h>80</h>
+      <x>496</x>
+      <y>72</y>
+      <w>128</w>
+      <h>32</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
-(1)Add Buf To</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>120</x>
-      <y>460</y>
-      <w>140</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>利用MonoBehavior
-的生命周期控制
-Buff对敌人对象
-的影响</panel_attributes>
+    <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
+BleedBuf
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>460</y>
-      <w>150</w>
-      <h>50</h>
+      <x>552</x>
+      <y>96</y>
+      <w>24</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;30.0;130.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>120</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+ApplyBleedBuf()</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>328</x>
+      <y>128</y>
+      <w>16</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>144</y>
+      <w>208</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+AddComponent&lt;BleedBuf&gt;()</panel_attributes>
+    <additional_attributes>10.0;60.0;60.0;60.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>232</y>
+      <w>248</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+hpMinus(damagePerTick : int)</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>488</x>
+      <y>200</y>
+      <w>136</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>loop
+[Before Buff End]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>496</y>
+      <w>128</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
+Enemy
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>416</y>
+      <w>184</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-
+Create &gt;</panel_attributes>
+    <additional_attributes>10.0;120.0;80.0;120.0;80.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>472</y>
+      <w>184</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-
+Create &gt;</panel_attributes>
+    <additional_attributes>10.0;50.0;80.0;50.0;80.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>504</y>
+      <w>184</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+Create &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;80.0;210.0;80.0</additional_attributes>
   </element>
 </diagram>

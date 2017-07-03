@@ -86,25 +86,33 @@ public class WaveSpawner : MonoBehaviour {
     {
         for (int i = 0; i < waves[currentWave].enemyType.Count; i++)
         {
-            Debug.Log(waves[currentWave].enemyType.Count);
             for (int j = 0; j < waves[currentWave].enemyCount[i]; j++)
             {
-                Debug.Log("Spawning: "+ j + "/" + waves[currentWave].enemyCount[i] + " of " + waves[currentWave].enemyType[i]);
-                switch (waves[currentWave].enemyType[i])
-                {
-                    case EnemyType.Enemy1:
-                        factory.spawn(EnemyType.Enemy1);
-                        break;
-                    case EnemyType.Enemy2:
-                        factory.spawn(EnemyType.Enemy2);
-                        break;
-                    case EnemyType.Enemy3:
-                        factory.spawn(EnemyType.Enemy3);
-                        break;
-                    case EnemyType.Enemy4:
-                        factory.spawn(EnemyType.Enemy4);
-                        break;
-                }
+                int w = j + 1;
+                Debug.Log("Spawning: "+ w + "/" + waves[currentWave].enemyCount[i] + " of " + waves[currentWave].enemyType[i]);
+                factory.spawn(waves[currentWave].enemyType[i]);
+//                switch (waves[currentWave].enemyType[i])
+//                {
+                    
+//                    case EnemyType.Enemy1:
+//                        factory.spawn(EnemyType.Enemy1);
+//                        break;
+//                    case EnemyType.Enemy2:
+//                        factory.spawn(EnemyType.Enemy2);
+//                        break;
+//                    case EnemyType.Enemy3:
+//                        factory.spawn(EnemyType.Enemy3);
+//                        break;
+//                    case EnemyType.Enemy4:
+//                        factory.spawn(EnemyType.Enemy4);
+//                        break;
+//                    case EnemyType.PostGrad:
+//                        factory.spawn(EnemyType.PostGrad);
+//                        break;
+//                    case EnemyType.Exchange:
+//                        factory.spawn(EnemyType.Exchange);
+//                        break;
+//                }
                 yield return new WaitForSeconds(waves[currentWave].spawnInterval);
             }
         }

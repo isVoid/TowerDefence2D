@@ -13,12 +13,14 @@ public class EnemyFactory : System.Object {
         return instance;
     }
 
-    public void initEnemySprites(List<GameObject> ememySprites)
+    public void initEnemySprites(List<GameObject> enemySprites)
     {
-        Enemy1 = ememySprites[0];
-        Enemy2 = ememySprites[1];
-        Enemy3 = ememySprites[2];
-        Enemy4 = ememySprites[3];
+        Enemy1 = enemySprites[0];
+        Enemy2 = enemySprites[1];
+        Enemy3 = enemySprites[2];
+        Enemy4 = enemySprites[3];
+        PostGrad = enemySprites[4];
+        Exchange = enemySprites[5];
     }
 
     public WaypointManager waypointManager;
@@ -39,6 +41,14 @@ public class EnemyFactory : System.Object {
     private List<GameObject> usingEnemy4List = new List<GameObject>();
     private List<GameObject> unusedEnemy4List = new List<GameObject>();
 
+    public GameObject PostGrad;
+    private List<GameObject> usingPostGradList = new List<GameObject>();
+    private List<GameObject> unusedPostGradList = new List<GameObject>();
+
+    public GameObject Exchange;
+    private List<GameObject> usingExchangeList = new List<GameObject>();
+    private List<GameObject> unusedExchangeList = new List<GameObject>();
+
     public void wipeFactory()
     {
         usingEnemy1List.Clear();
@@ -52,6 +62,12 @@ public class EnemyFactory : System.Object {
 
         usingEnemy4List.Clear();
         unusedEnemy4List.Clear();
+
+        usingPostGradList.Clear();
+        unusedPostGradList.Clear();
+
+        usingExchangeList.Clear();
+        unusedPostGradList.Clear();
 
     }
 
@@ -71,6 +87,12 @@ public class EnemyFactory : System.Object {
                 break;
             case EnemyType.Enemy4:  
                 spawnImpl(Enemy4, usingEnemy4List, unusedEnemy4List);
+                break;
+            case EnemyType.PostGrad:
+                spawnImpl(PostGrad, usingPostGradList, unusedPostGradList);
+                break;
+            case EnemyType.Exchange:
+                spawnImpl(Exchange, usingExchangeList, unusedExchangeList);
                 break;
         }
 
@@ -117,6 +139,12 @@ public class EnemyFactory : System.Object {
             case EnemyType.Enemy4:
                 recycleImpl(Enemy, usingEnemy4List, unusedEnemy4List);
                 break;
+            case EnemyType.PostGrad:
+                recycleImpl(Enemy, usingPostGradList, unusedPostGradList);
+                break;
+            case EnemyType.Exchange:
+                recycleImpl(Enemy, usingExchangeList, unusedExchangeList);
+                break;
         }
 
     }
@@ -140,6 +168,8 @@ public class EnemyFactory : System.Object {
         allEnemies.AddRange(usingEnemy2List);
         allEnemies.AddRange(usingEnemy3List);
         allEnemies.AddRange(usingEnemy4List);
+        allEnemies.AddRange(usingPostGradList);
+        allEnemies.AddRange(usingExchangeList);
 
         return allEnemies;
     }

@@ -30,6 +30,11 @@ public class HealthBar : MonoBehaviour {
         }
     }
 
+    public void hideHealthBar()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void updateHealthBar(float hp)
     {
         if (!gameObject.activeSelf)

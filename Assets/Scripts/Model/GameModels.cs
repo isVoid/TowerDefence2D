@@ -154,13 +154,13 @@ public class GameModels : MonoBehaviour {
         UpgradeBtnGroup.transform.position = towerList[towerIndex].position;
         lastClickTowerIndex = towerIndex;
     }
-
+ 
     public void buildIceTower() {
         if (fm.checkBalanceAgainst(data.IceTowerPrice[0]))
         {
             fm.useMoney(data.IceTowerPrice[0]);
             int stubID = gameSceneController.getChosenStubNum();
-            Debug.Log("buildPizzaTower at " + stubID);
+            Debug.Log("buildIceTower at " + stubID);
             BuildBtnGroup.SetActive(false);        
             Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildIceTower();
             tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
@@ -176,7 +176,7 @@ public class GameModels : MonoBehaviour {
         {
             fm.useMoney(data.DrinkTowerPrice[0]);
             int stubID = gameSceneController.getChosenStubNum();
-            Debug.Log("buildPizzaTower at " + stubID);
+            Debug.Log("buildDrinkTower at " + stubID);
             BuildBtnGroup.SetActive(false);        
             Transform tower = stubList[stubID].GetComponent<StubBehavior>().buildDrinkTower();
             tower.GetComponent<BaseTowerBehavior>().setStubID(stubID);
@@ -295,6 +295,13 @@ public class GameModels : MonoBehaviour {
 
             UpgradeBtnGroup.SetActive(false);
             stubList[stubid].gameObject.SetActive(true);
+
+            //After removal, update all tower's id
+            //It will be quick. N < 20;
+            for (int i = 0; i < towerList.Count; i++)
+            {
+                towerList[i].GetComponent<BaseTowerBehavior>().ID = i;
+            }
 
         }
         else

@@ -47,6 +47,11 @@ public class GameStatus : MonoBehaviour {
         gameSceneController.setUpgradeBtnGroupPos(chosenTowerIndex);
     }
 
+    public void resetClickedTowerIndex()
+    {
+        chosenTowerIndex = -1;
+    }
+
     public int getChosenStubNum() {
         return chosenStubIndex;
     }

@@ -8,7 +8,6 @@ public class GameMonitor : MonoBehaviour {
     public WaveSpawner waveSpawner;
 
     private EnemyFactory enemyFactory;
-    private GameStatus gameStatus;
     private GameSceneController controller;
     private GameData data;
 
@@ -18,7 +17,6 @@ public class GameMonitor : MonoBehaviour {
         controller.setGameMonitor(this);
 
         enemyFactory = EnemyFactory.getInstance();
-        gameStatus = transform.GetComponent<GameStatus>();
 
         data = GameData.getInstance();
         remainTimeOfLevel = data.LevelTime[controller.getLevel()];
@@ -34,20 +32,20 @@ public class GameMonitor : MonoBehaviour {
         }
         //Win Condition 1: Level Time finish && alive
         //Critical Condition: When current star == 0 and ramain time == 0 is satisfied at the same time, consider as winning.
-        else if (remainTimeOfLevel <= 0 && gameStatus.getCurrentStar() >= 0)
+        else if (remainTimeOfLevel <= 0 && controller.getCurrentStar() >= 0)
         {
             controller.updateCountDownUI("");
             controller.endGame();
         }
 
         //Win Condition 2: All Waves finished spawning, All Enemy killed, User Health more than 0
-        if (waveSpawner.waveFinish() && enemyFactory.allSpriteRecycled() && gameStatus.getCurrentStar() > 0)
+        if (waveSpawner.waveFinish() && enemyFactory.allSpriteRecycled() && controller.getCurrentStar() > 0)
         {
             controller.updateCountDownUI("");
             controller.endGame();
         }
         //Fail Condition: User Health equal to 0
-        else if (gameStatus.getCurrentStar() == 0)
+        else if (controller.getCurrentStar() == 0)
         {
             controller.updateCountDownUI("");
             controller.failGame();
