@@ -112,7 +112,7 @@ public class EnemyFactory : System.Object {
         //If no spawned unactive gameobject, instantiate new.
         if (unusedEnemyList.Count == 0)
         {
-            GameObject newEnemy = Camera.Instantiate(Enemy, waypointManager.getStart().position, waypointManager.getStart().rotation);
+            GameObject newEnemy = Camera.Instantiate(Enemy, waypointManager.getStartPos(), Quaternion.identity);
             usingEnemyList.Add(newEnemy);
 
             newEnemy.SetActive(true);
@@ -123,8 +123,9 @@ public class EnemyFactory : System.Object {
             usingEnemyList.Add(usedEnemy);
             unusedEnemyList.RemoveAt(0);
 
-            usedEnemy.transform.position = waypointManager.getStart().position;
-            usedEnemy.transform.rotation = waypointManager.getStart().rotation;
+            usedEnemy.transform.position = waypointManager.getStartPos();
+//            usedEnemy.transform.rotation = waypointManager.getStart().rotation;
+            usedEnemy.transform.rotation = Quaternion.identity;
             usedEnemy.SetActive(true);
         }
     }

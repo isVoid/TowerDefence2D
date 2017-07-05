@@ -39,6 +39,7 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+//        base.Update();
 
         if (fireCountDown <= 0f)
         {

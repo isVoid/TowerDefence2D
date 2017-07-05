@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaypointManager : MonoBehaviour {
 
     public static Transform[] waypoints;
+    public static Transform start;
 
     void Awake() {
         waypoints = new Transform[transform.childCount];
@@ -13,10 +14,13 @@ public class WaypointManager : MonoBehaviour {
         {
             waypoints[i] = transform.GetChild(i);
         }
+
+        start = GameObject.Find("WayPoint").transform;
     }
 
-    public Transform getStart() {
-        return waypoints[0];
+    float r = 0.3f;
+    public Vector3 getStartPos() {
+        return start.position + new Vector3(Random.value + r, Random.value * r + Random.value * r);
     }
 
     public Transform getEnd() {

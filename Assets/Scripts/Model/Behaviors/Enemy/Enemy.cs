@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour {
 
     public EnemyType myType;
-    public Transform target;
+    public Vector3 target;
     public EnemyFactory enemyFactory;
     private GameSceneController controller;
     protected GameData data;
@@ -42,11 +42,11 @@ public abstract class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void OnEnable () {
         
-        target = WaypointManager.waypoints[0];
+        target = WaypointManager.waypoints[0].position;
         healthBar.hideHealthBar();
 
 	}
-	
+        
 	// Update is called once per frame
 	void Update () {
 		
@@ -54,12 +54,12 @@ public abstract class Enemy : MonoBehaviour {
         {
             killed();
         }
+            
+        Vector3 dir = target - transform.position;
 
-        Vector3 dir = target.position - transform.position;
+        transform.Translate(dir.normalized * mySpeed * ((Random.value * 0.2f) + 0.9f) * Time.deltaTime, Space.World);
 
-        transform.Translate(dir.normalized * mySpeed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+        if (Vector3.Distance(transform.position, target) <= 0.2f)
         {
             GetNextWaypoint();
         }
@@ -67,6 +67,21 @@ public abstract class Enemy : MonoBehaviour {
         updateBufTint();
 
 	}
+
+    float r = 0.3f;
+    void GetNextWaypoint()
+    {
+        waypointIndex++;
+
+        if (waypointIndex >= WaypointManager.waypoints.Length)
+        {
+            damage();
+        }
+
+        target = WaypointManager.waypoints[waypointIndex].position;
+        Vector3 rand = new Vector3(Random.value * r, Random.value * r + Random.value * r);
+        target += rand;
+    }
 
     public float getHP()
     {
@@ -91,17 +106,7 @@ public abstract class Enemy : MonoBehaviour {
 
     protected abstract void loadEnemyData();
 
-    void GetNextWaypoint()
-    {
-        waypointIndex++;
 
-        if (waypointIndex >= WaypointManager.waypoints.Length)
-        {
-            damage();
-        }
-
-        target = WaypointManager.waypoints[waypointIndex];
-    }
 
     void destroy(){
         //Reset
