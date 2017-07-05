@@ -9,7 +9,9 @@ public class SwitchSceneUtil : MonoBehaviour, SceneClickOp {
     private string titleScene = "GameTitle";
     private string levelSelectScene = "LevelSelect";
     private string[] levels = {
-        "Level0"
+        "Level0",
+        "Level1",
+        "Level2"
     };
 
 	// Use this for initialization

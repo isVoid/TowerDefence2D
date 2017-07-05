@@ -23,7 +23,7 @@ Enemy#
       <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;monobehavior&gt;&gt;
-Enemy
+:Enemy
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -33,11 +33,11 @@ Enemy
       <x>490</x>
       <y>110</y>
       <w>230</w>
-      <h>90</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=-
 &lt; has a</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;40.0;210.0;40.0;210.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;40.0;210.0;40.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
@@ -65,37 +65,37 @@ Enemy
     <id>Relation</id>
     <coordinates>
       <x>420</x>
-      <y>490</y>
-      <w>240</w>
+      <y>480</y>
+      <w>250</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 Instantiate()</panel_attributes>
-    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>570</x>
-      <y>380</y>
+      <x>650</x>
+      <y>470</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Prefab&gt;&gt;
-HealthBar
+:HealthBar
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>380</y>
+      <x>850</x>
+      <y>470</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>&lt;&lt;MonoBehavior&gt;&gt;
-HealthBar
+:HealthBar
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -114,37 +114,26 @@ has a v</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
+      <x>420</x>
       <y>700</y>
-      <w>460</w>
+      <w>540</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 UpdateHealthBar()</panel_attributes>
-    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>520.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>290</x>
       <y>670</y>
-      <w>150</w>
+      <w>160</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 SetHealth()</panel_attributes>
-    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>420</x>
-      <y>680</y>
-      <w>20</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
@@ -170,13 +159,13 @@ n为Enemy Prefab的个数
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>410</y>
+      <x>720</x>
+      <y>500</y>
       <w>30</w>
-      <h>420</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;400.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -194,7 +183,7 @@ Start()</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>420</x>
-      <y>180</y>
+      <y>170</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -242,85 +231,39 @@ has a v</panel_attributes>
     <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>640</x>
-      <y>490</y>
-      <w>20</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>510</y>
-      <w>240</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-Create</panel_attributes>
-    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>860</x>
-      <y>410</y>
+      <x>930</x>
+      <y>500</y>
       <w>30</w>
-      <h>420</h>
+      <h>310</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;400.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>420</x>
       <y>530</y>
-      <w>240</w>
+      <w>330</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 HealthBar:GameObject</panel_attributes>
-    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;310.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>420</x>
       <y>590</y>
-      <w>240</w>
+      <w>330</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-GetComponent&lt;HealthBar&gt;()</panel_attributes>
-    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>640</x>
-      <y>590</y>
-      <w>20</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>420</x>
-      <y>620</y>
-      <w>240</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-HealthBar:MonoBehavior</panel_attributes>
-    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+GetComponentInChild&lt;HealthBar&gt;()</panel_attributes>
+    <additional_attributes>310.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -357,5 +300,17 @@ HealthBar:MonoBehavior</panel_attributes>
     <panel_attributes>该层级关系导致
 Enemy大小缩放受限</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>630</y>
+      <w>330</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+HealthBar:MonoBehavior</panel_attributes>
+    <additional_attributes>10.0;20.0;310.0;20.0</additional_attributes>
   </element>
 </diagram>
