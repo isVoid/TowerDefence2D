@@ -76,7 +76,7 @@ public class EnemyFactory : System.Object {
         unusedPostGradList.Clear();
 
         usingExchangeList.Clear();
-        unusedPostGradList.Clear();
+        unusedExchangeList.Clear();
 
     }
 
