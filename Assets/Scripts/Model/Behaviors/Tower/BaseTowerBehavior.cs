@@ -15,6 +15,7 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
 
     public int ID;
     public int StubID;
+    public TowerType type;
 
     public int lv;
     public int value;

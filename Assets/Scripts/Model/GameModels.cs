@@ -259,10 +259,51 @@ public class GameModels : MonoBehaviour {
         }
         if (chosenTower != null)
         {
-            int currentLv = chosenTower.GetComponent<BaseTowerBehavior>().getLevel();
-            if (currentLv < data.GuandongTowerLevel - 1)
+            BaseTowerBehavior btb = chosenTower.GetComponent<BaseTowerBehavior>();
+            int currentLv = btb.getLevel();
+            TowerType type = btb.type;
+            int MaxLv = 0;
+            switch (type)
             {
-                int price = data.GuandongTowerPrice[currentLv + 1];
+                case TowerType.DrinkTower:
+                    MaxLv = data.DrinkTowerLevel;
+                    break;
+                case TowerType.GuandongTower:
+                    MaxLv = data.GuandongTowerLevel;
+                    break;
+                case TowerType.IceTower:
+                    MaxLv = data.IceTowerLevel;
+                    break;
+                case TowerType.MelonTower:
+                    MaxLv = data.MelonTowerLevel;
+                    break;
+                case TowerType.PizzaTower:
+                    MaxLv = data.PizzaTowerLevel;
+                    break;
+            }
+
+            if (currentLv < MaxLv - 1)
+            {
+//                int price = data.GuandongTowerPrice[currentLv + 1];
+                int price = 0;
+                switch (type)
+                {
+                    case TowerType.DrinkTower:
+                        price = data.DrinkTowerPrice[currentLv + 1];
+                        break;
+                    case TowerType.GuandongTower:
+                        price = data.GuandongTowerPrice[currentLv + 1];
+                        break;
+                    case TowerType.IceTower:
+                        price = data.IceTowerPrice[currentLv + 1];
+                        break;
+                    case TowerType.MelonTower:
+                        price = data.MelonTowerPrice[currentLv + 1];
+                        break;
+                    case TowerType.PizzaTower:
+                        price = data.PizzaTowerPrice[currentLv + 1];
+                        break;
+                }
 
                 if (fm.checkBalanceAgainst(price))
                 {

@@ -19,7 +19,7 @@ public abstract class Enemy : MonoBehaviour {
     public float mySpeed;
     public int myValue;
 
-    private int waypointIndex = 0;
+    protected int waypointIndex = 0;
 
     protected virtual void Awake()
     {
@@ -94,7 +94,7 @@ public abstract class Enemy : MonoBehaviour {
         healthBar.updateHealthBar(hp);
     }
 
-    public void hpMinus(float dmg)
+    public virtual void hpMinus(float dmg)
     {
         sethp(hp - dmg);
     }
@@ -189,7 +189,7 @@ public abstract class Enemy : MonoBehaviour {
     }
 
     //Updating Tint needs global buf info
-    void updateBufTint()
+    protected virtual void updateBufTint()
     {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (GetComponents<BaseBuf>().Length > 0)

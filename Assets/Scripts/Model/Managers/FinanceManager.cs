@@ -43,6 +43,7 @@ public class FinanceManager : System.Object {
 
     public bool checkBalanceAgainst(int amount)
     {
+        Debug.Log("Balance and price: " + balance + " " + amount);
         return balance >= amount;
     }
 

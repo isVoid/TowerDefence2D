@@ -24,6 +24,11 @@ public class PostGradBehavior : Enemy {
         mySpeed = data.EnemySpeed[4];
     }
 
+    //Special Ability
+    public bool flashAvailable = true;
+    float flashCoolDownTime = 15f;
+    public float currentCoolDownTime = 0f;
+
     protected override void Update()
     {
         base.Update();
@@ -43,7 +48,42 @@ public class PostGradBehavior : Enemy {
         }
 
         t -= Time.deltaTime;
+
+        if (currentCoolDownTime > 0 && !flashAvailable)
+        {
+            currentCoolDownTime -= Time.deltaTime;
+        }
+        else if (currentCoolDownTime <= 0 && !flashAvailable)
+        {
+            flashAvailable = true;
+        }
     }
 
+    public override void hpMinus(float dmg)
+    {
+        if (!flashAvailable)
+            base.hpMinus(dmg);
+        else
+        {
+            flash();
+            flashAvailable = false;
+            currentCoolDownTime = flashCoolDownTime;
+        }
+
+    }
+
+    void flash()
+    {
+        if (waypointIndex + 1 < WaypointManager.waypoints.Length)
+        {
+            waypointIndex = waypointIndex + 1;
+            transform.position = WaypointManager.waypoints[waypointIndex].position;
+            target = WaypointManager.waypoints[waypointIndex + 1].position;
+        }
+        else
+        {
+            Debug.Log("Cannot flash to finish. Immune to damage one time.");
+        }
+    }
 
 }
