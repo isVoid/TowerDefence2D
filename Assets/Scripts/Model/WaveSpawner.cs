@@ -31,7 +31,9 @@ public class WaveSpawner : MonoBehaviour {
 
     public int currentWave = 0;
 
-    private List<Wave> waves;
+    public List<Wave> waves;
+
+    bool spawning = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -71,53 +73,63 @@ public class WaveSpawner : MonoBehaviour {
             return;
         }
 
-        if (countdown <= 0f)
+        //Currently We do not support spawning 2 waves intercepting each other.
+        if (countdown <= 0f && !spawning)
         {
-            StartCoroutine(SpawnWave());
+            StartCoroutine(SpawnWave(false));
             countdown = waves[currentWave].timeToNextWave;
-
+            spawning = true;
         }
 
         countdown -= Time.deltaTime;
 
 	}
 
-    IEnumerator SpawnWave()
+    void OnEnable()
     {
-        for (int i = 0; i < waves[currentWave].enemyType.Count; i++)
+        if (spawning)
         {
-            for (int j = 0; j < waves[currentWave].enemyCount[i]; j++)
-            {
-                int w = j + 1;
-                Debug.Log("Spawning: "+ w + "/" + waves[currentWave].enemyCount[i] + " of " + waves[currentWave].enemyType[i]);
-                factory.spawn(waves[currentWave].enemyType[i]);
-//                switch (waves[currentWave].enemyType[i])
-//                {
-                    
-//                    case EnemyType.Enemy1:
-//                        factory.spawn(EnemyType.Enemy1);
-//                        break;
-//                    case EnemyType.Enemy2:
-//                        factory.spawn(EnemyType.Enemy2);
-//                        break;
-//                    case EnemyType.Enemy3:
-//                        factory.spawn(EnemyType.Enemy3);
-//                        break;
-//                    case EnemyType.Enemy4:
-//                        factory.spawn(EnemyType.Enemy4);
-//                        break;
-//                    case EnemyType.PostGrad:
-//                        factory.spawn(EnemyType.PostGrad);
-//                        break;
-//                    case EnemyType.Exchange:
-//                        factory.spawn(EnemyType.Exchange);
-//                        break;
-//                }
-                yield return new WaitForSeconds(waves[currentWave].spawnInterval);
-            }
+            StartCoroutine(SpawnWave(true));
         }
-            
-        currentWave++;
+    }
+
+    public int i = 0;
+    public int j = 0;
+    IEnumerator SpawnWave(bool cont)
+    {
+        if (!cont)
+        {
+            for (i = 0; i < waves[currentWave].enemyType.Count; i++)
+            {
+                for (j = 0; j < waves[currentWave].enemyCount[i]; j++)
+                {
+                    int w = j + 1;
+                    Debug.Log("Spawning: " + w + "/" + waves[currentWave].enemyCount[i] + " of " + waves[currentWave].enemyType[i]);
+                    factory.spawn(waves[currentWave].enemyType[i]);
+                    yield return new WaitForSeconds(waves[currentWave].spawnInterval);
+                }
+            }
+
+            currentWave++;
+            spawning = false;
+        }
+        else
+        {
+            for (; i < waves[currentWave].enemyType.Count; i++)
+            {
+                for (; j < waves[currentWave].enemyCount[i]; j++)
+                {
+                    int w = j + 1;
+                    Debug.Log("Spawning: "+ w + "/" + waves[currentWave].enemyCount[i] + " of " + waves[currentWave].enemyType[i]);
+                    factory.spawn(waves[currentWave].enemyType[i]);
+                    yield return new WaitForSeconds(waves[currentWave].spawnInterval);
+                }
+            }
+
+            currentWave++;
+            spawning = false;
+            i = j = 0;
+        }
     }
 
     public bool waveFinish()
