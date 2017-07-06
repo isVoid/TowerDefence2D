@@ -20,6 +20,7 @@ public class BleedBuf : BaseBuf {
         int tick = (int)Mathf.Floor(currentTime / timePerTick);
         if (tick > lastTick)
         {
+//            Debug.Log(tick + " " + lastTick);
             transform.GetComponent<Enemy>().hpMinus(damagePerTick);
             lastTick++;
         }

@@ -24,7 +24,7 @@ public abstract class Enemy : MonoBehaviour {
     protected virtual void Awake()
     {
         GameObject hb = Instantiate(healthBarPrefab, transform);
-        hb.transform.localPosition = new Vector3(0, 0.4f, -1);
+        hb.transform.localPosition = new Vector3(0, 0.7f, -1);
 
         healthBar = GetComponentInChildren<HealthBar>();
 
@@ -116,7 +116,7 @@ public abstract class Enemy : MonoBehaviour {
         BaseBuf[] list = GetComponents<BaseBuf>();
         if (list.Length > 0)
         {
-            Debug.Log("Enemy Has Buf, removing before destroy");
+//            Debug.Log("Enemy Has Buf, removing before destroy");
             for (int i = 0; i < list.Length; i++)
             {
                 Destroy(list[i]);

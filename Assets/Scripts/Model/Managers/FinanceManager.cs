@@ -15,20 +15,12 @@ public class FinanceManager : System.Object {
         }
         return instance;
     }
-
-//    public GameObject moneyUIText;
-
-//    public int balance { 
-//        get{ return balance; } 
-//        set { balance = value;
-//            controller.updateMoneyUI(balance);
-//        }}
-
+        
     private int balance;
 
     private FinanceManager() {
-//        moneyUIText = GameObject.FindWithTag("Money");
         controller = GameSceneController.getInstance();
+
     }
 
     public void setBalance(int b)
@@ -46,9 +38,6 @@ public class FinanceManager : System.Object {
     {
         balance += amount;
         controller.updateMoneyUI(balance);
-//        Debug.Log(balance + " " + amount);
-//        moneyUIText.GetComponent<Text>().text = balance.ToString();
-
 
     }
 
@@ -63,8 +52,6 @@ public class FinanceManager : System.Object {
         {
             balance -= amount;
             controller.updateMoneyUI(balance);
-//            Debug.Log(balance);
-//            moneyUIText.GetComponent<Text>().text = balance.ToString();
             return true;
         }
         return false;

@@ -28,6 +28,7 @@ public class PizzaTowerBehavior : BaseTowerBehavior {
             cannonBall.GetComponent<PizzaBallBehavior>().explodeRange = explodeRange;
             cannonBall.GetComponent<PizzaBallBehavior>().bleedTime = bleedTime;
             cannonBall.GetComponent<PizzaBallBehavior>().bleedDamage = bleedDamage;
+            Debug.Log(cannonBall.GetComponent<PizzaBallBehavior>().bleedDamage);
         }
 
     }
@@ -36,7 +37,6 @@ public class PizzaTowerBehavior : BaseTowerBehavior {
     {
         explodeRange = d.PizzaTowerExplodeRange[lv];
         bleedTime = d.PizzaTowerBleedTime[lv];
-        bleedDamage = d.PizzaTowerDamage[lv];
 
         damage = d.PizzaTowerDamage[lv];
         value = value +  (int)Mathf.Floor(d.PizzaTowerPrice[lv] * 0.5f);
