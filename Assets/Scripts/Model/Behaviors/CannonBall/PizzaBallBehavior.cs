@@ -13,23 +13,45 @@ public class PizzaBallBehavior : BaseBallBehavior {
     public float bleedTime;
     public float bleedDamage;
 
-    protected override void FixedUpdate() {
-        dTime += Time.fixedDeltaTime;
-        gravity.y = g * dTime;    //v=g*t
-        //模拟位移
-        this.gameObject.transform.Translate(speed * Time.fixedDeltaTime);
-        this.gameObject.transform.Translate(gravity * Time.fixedDeltaTime);
+    bool playedExplodeAnim = false;
+    bool exploded = false;
 
-        //当处于下落状态，且y方向位置低于target位置，则视为炮弹落地
-        if (this.gameObject.transform.position.y < targetPos.y
-            && abs(speed.y) < abs(gravity.y))
-        {
-            //            target.GetComponent<Enemy>().hp -= damage;
-            explode();
-            CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
-        }
+    protected override void OnEnable()
+    {
+        playedExplodeAnim = false;
+        exploded = false;
+        transform.localScale = new Vector3(0.5f, 0.5f, 76.8f);
     }
 
+    protected override void FixedUpdate() {
+        if (!exploded)
+        {
+            dTime += Time.fixedDeltaTime;
+            gravity.y = g * dTime;    //v=g*t
+            //模拟位移
+            this.gameObject.transform.Translate(speed * Time.fixedDeltaTime);
+            this.gameObject.transform.Translate(gravity * Time.fixedDeltaTime);
+
+            //当处于下落状态，且y方向位置低于target位置，则视为炮弹落地
+            if (this.gameObject.transform.position.y < targetPos.y
+                && abs(speed.y) < abs(gravity.y))
+            {
+                //            target.GetComponent<Enemy>().hp -= damage;
+                explode();
+                //            CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
+                if (!playedExplodeAnim)
+                    GetComponent<Animator>().SetTrigger("shouldExplode");
+                playedExplodeAnim = true;
+                exploded = true;
+            }
+        }
+
+    }
+
+    public void recycleSelf()
+    {
+        CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
+    }
 
     //取绝对值
     float abs(float a) {
@@ -75,5 +97,10 @@ public class PizzaBallBehavior : BaseBallBehavior {
             pos = newPos;
         }
         Gizmos.DrawLine(pos,lastPos);
+    }
+
+    public void upscaleForExplosion()
+    {
+        transform.localScale = new Vector3(3f, 3f, 76.8f);
     }
 }

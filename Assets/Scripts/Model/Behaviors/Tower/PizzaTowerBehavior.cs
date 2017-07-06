@@ -23,6 +23,7 @@ public class PizzaTowerBehavior : BaseTowerBehavior {
             Vector2 tarPos = target.position;
 //            Debug.Log(tarPos);
             GameObject cannonBall = CannonBallFactory.getInstance().generateCannonBall(currPos, tarPos, BallType.PizzaBall);
+//            cannonBall.transform.localScale = new Vector3(0.5f, 0.5f, 76.8f);
             cannonBall.GetComponent<PizzaBallBehavior>().target = target.gameObject;
             cannonBall.GetComponent<PizzaBallBehavior>().damage = damage;
             cannonBall.GetComponent<PizzaBallBehavior>().explodeRange = explodeRange;

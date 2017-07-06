@@ -23,6 +23,12 @@ public abstract class BaseBallBehavior : MonoBehaviour {
         enemyFactory = EnemyFactory.getInstance();
     }
 
+    protected virtual void OnEnable(){
+    }
+
+    protected virtual void Start() {
+    }
+
     protected virtual void FixedUpdate() {
         //TODO: Define Shooting behavior
 
