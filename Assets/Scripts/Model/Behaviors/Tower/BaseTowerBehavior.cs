@@ -57,6 +57,7 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
     {
         target = null;
         List<GameObject> enemies = enemyFactory.getAllActiveEnemies();
+        Debug.Log(enemies.Count);
         foreach (GameObject enemy in enemies)
         {
             Transform loc = enemy.transform;

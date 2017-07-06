@@ -126,6 +126,13 @@ public class GameModels : MonoBehaviour {
 //        SummaryGUI.transform.GetChild(1).GetComponent<Text>().text = "失败！";
     }
 
+    public void quitGame()
+    {
+        enemySpawner.SetActive(false);
+        GameMenu.SetActive(false);
+        SummaryGUI.SetActive(false);
+    }
+
     public void setBuildBtnGroupPos(int stubIndex) {
         if (!BuildBtnGroup.activeInHierarchy) {
             BuildBtnGroup.SetActive(true);

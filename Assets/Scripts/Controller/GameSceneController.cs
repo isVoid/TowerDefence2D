@@ -93,6 +93,15 @@ public class GameSceneController : System.Object, UserClickOp, GameFlow, MenuCli
         }
     }
 
+    public void quitGame()
+    {
+        myGameStatus.switchGameState(GameState.Paused);
+        myGameModels.quitGame();
+
+        enemyFactory.wipeFactory();
+        cannonBallFactory.wipeFactory();
+    }
+
     public void setBuildBtnGroupPos(int stubIndex) {
         myGameModels.setBuildBtnGroupPos(stubIndex);
     }

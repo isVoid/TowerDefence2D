@@ -7,11 +7,13 @@ public class UserInterface : MonoBehaviour {
     UserClickOp userClickOp;
     SceneClickOp sceneClickOp;
     MenuClickOp menuClickOp;
+    GameSceneController controller;
 
     void Start () {
         userClickOp = GameSceneController.getInstance() as UserClickOp;
         sceneClickOp = GameObject.Find("GameManager").GetComponent<SwitchSceneUtil>() as SceneClickOp;
         menuClickOp = GameSceneController.getInstance() as MenuClickOp;
+        controller = GameSceneController.getInstance();
     }
 	
 	void Update () {
@@ -95,6 +97,7 @@ public class UserInterface : MonoBehaviour {
         }
         else if (button == "Return")
         {
+            controller.quitGame();
             sceneClickOp.loadLevelSelectScene();
         }
         else if (button == "cancel")
