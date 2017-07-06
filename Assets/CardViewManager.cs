@@ -31,6 +31,8 @@ public class CardViewManager : MonoBehaviour {
     void Start()
     {
         UIStarManager[] starManagers = GetComponentsInChildren<UIStarManager>();
+        Card[] cards = GetComponentsInChildren<Card>();
+
         if (starManagers.Length != data.LevelStar.Length)
         {
             Debug.Log("Level Length Inconsistent!");
@@ -40,6 +42,10 @@ public class CardViewManager : MonoBehaviour {
         for (int i = 0; i < starManagers.Length; i++)
         {
             starManagers[i].updateStarView(data.LevelStar[i]);
+            if (data.LevelStar[i] != 0)
+            {
+                cards[i].finishedLogo.SetActive(true);
+            }
         }
     }
 

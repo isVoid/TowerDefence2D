@@ -17,6 +17,7 @@ public class DrinkBallBehavior : BaseBallBehavior {
             target.GetComponent<Enemy>().hpMinus(damage);
             CannonBallFactory.getInstance().recycleCannonBall(this.gameObject);
         }
+
     }
 
 }

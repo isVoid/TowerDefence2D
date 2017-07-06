@@ -22,8 +22,8 @@ public class IceTowerBehavior : BaseTowerBehavior {
             cannonBall.GetComponent<IceBallBehavior>().damage = damage;
             cannonBall.GetComponent<IceBallBehavior>().slowTime = slowTime;
             cannonBall.GetComponent<IceBallBehavior>().slowFactor = slowFactor;
+            cannonBall.GetComponent<SpriteRenderer>().sprite = levelCannonBallImages[lv];
         }
-
 
     }
 
@@ -34,7 +34,16 @@ public class IceTowerBehavior : BaseTowerBehavior {
 
         interval = d.IceTowerFireInterval[lv];
         damage = d.IceTowerDamage[lv];
-        value = (int)Mathf.Floor(d.IceTowerPrice[lv] * 0.5f);
+        value = value + (int)Mathf.Floor(d.IceTowerPrice[lv] * 0.5f);
+
+        if (lv < d.IceTowerLevel - 1)
+        {
+            nextValue = d.IceTowerPrice[lv + 1];
+        }
+        else
+        {
+            nextValue = int.MaxValue;
+        }
     }
         
 }

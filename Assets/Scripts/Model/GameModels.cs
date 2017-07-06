@@ -150,8 +150,20 @@ public class GameModels : MonoBehaviour {
                 return;
             }
         }
+        BaseTowerBehavior towerClicked = towerList[towerIndex].GetComponent<BaseTowerBehavior>();
+        int value = towerClicked.value;
+        int nextValue = towerClicked.nextValue;
 
-        UpgradeBtnGroup.transform.position = towerList[towerIndex].position;
+        UpdateBtnGroupManager ubgm = UpgradeBtnGroup.GetComponent<UpdateBtnGroupManager>();
+        ubgm.sellPrice.text = "+" + value.ToString("D");
+        if (nextValue == int.MaxValue)
+            ubgm.upgradePrice.text = "N/A";
+        else
+            ubgm.upgradePrice.text = nextValue.ToString("D");
+        
+        Vector3 p = towerList[towerIndex].position;
+        p.y += 0.5f;
+        UpgradeBtnGroup.transform.position = p;
         lastClickTowerIndex = towerIndex;
     }
  

@@ -39,7 +39,16 @@ public class PizzaTowerBehavior : BaseTowerBehavior {
         bleedDamage = d.PizzaTowerDamage[lv];
 
         damage = d.PizzaTowerDamage[lv];
-        value = (int)Mathf.Floor(d.PizzaTowerPrice[lv] * 0.5f);
+        value = value +  (int)Mathf.Floor(d.PizzaTowerPrice[lv] * 0.5f);
+
+        if (lv < d.PizzaTowerLevel - 1)
+        {
+            nextValue = d.PizzaTowerPrice[lv + 1];
+        }
+        else
+        {
+            nextValue = int.MaxValue;
+        }
     }
         
 }

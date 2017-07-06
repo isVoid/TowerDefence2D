@@ -41,6 +41,41 @@ public class GuandongTowerBehavior : BaseTowerBehavior {
                 GameObject cannonBall = CannonBallFactory.getInstance().generateCannonBall(currPos, tarPos, BallType.GuandongBall);
                 cannonBall.GetComponent<GuandongBallBehavior>().target = target.gameObject;
                 cannonBall.GetComponent<GuandongBallBehavior>().damage = damage;
+                cannonBall.GetComponent<SpriteRenderer>().sprite = levelCannonBallImages[lv];
+
+                Vector2 dir = target.position - transform.position;
+                float angle;
+                if (dir.x == 0)
+                {
+                    if (dir.y > 0)
+                        angle = 90;
+                    else if (dir.y < 0)
+                        angle = -90;
+                    else
+                        angle = 0;
+                }
+                else
+                {
+                    angle = Mathf.Atan(Mathf.Abs(dir.y/dir.x)) * 57.29f;
+
+                    if (dir.x > 0 && dir.y > 0)
+                    {
+                        //angle = angle;
+                    }
+                    else if (dir.x <= 0 && dir.y > 0)
+                    {
+                        angle = 180 - angle;
+                    }
+                    else if (dir.x <= 0 && dir.y <= 0)
+                    {
+                        angle = 180 + angle;
+                    }
+                    else if (dir.x > 0 && dir.y <= 0)
+                    {
+                        angle = 360 - angle;
+                    }
+                }
+                cannonBall.transform.rotation = Quaternion.Euler(0, 0, angle);
 
             }
         }
@@ -52,7 +87,16 @@ public class GuandongTowerBehavior : BaseTowerBehavior {
         range = d.GuandongTowerRange[lv];
 
         damage = d.GuandongTowerDamage[lv];
-        value = (int)Mathf.Floor(d.GuandongTowerPrice[lv] * 0.5f);
+        value = value + (int)Mathf.Floor(d.GuandongTowerPrice[lv] * 0.5f);
+        if (lv < d.GuandongTowerLevel - 1)
+        {
+            nextValue = d.GuandongTowerPrice[lv + 1];
+        }
+        else
+        {
+            nextValue = int.MaxValue;
+        }
+
     }
 
 

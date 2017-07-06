@@ -21,7 +21,7 @@ public abstract class Enemy : MonoBehaviour {
 
     private int waypointIndex = 0;
 
-    void Awake()
+    protected virtual void Awake()
     {
         GameObject hb = Instantiate(healthBarPrefab, transform);
         hb.transform.localPosition = new Vector3(0, 0.4f, -1);
@@ -48,7 +48,7 @@ public abstract class Enemy : MonoBehaviour {
 	}
         
 	// Update is called once per frame
-	void Update () {
+    protected virtual void Update () {
 		
         if (hp <= 0)
         {
@@ -113,12 +113,22 @@ public abstract class Enemy : MonoBehaviour {
         hp = fullHP;
         waypointIndex = 0;
 
-        if (GetComponent<BleedBuf>() != null)
-            Destroy(GetComponent<BleedBuf>());
-        if (GetComponent<SlowBuf>() != null)
-            Destroy(GetComponent<SlowBuf>());
-        if (GetComponent<StunBuf>() != null)
-            Destroy(GetComponent<StunBuf>());
+        BaseBuf[] list = GetComponents<BaseBuf>();
+        if (list.Length > 0)
+        {
+            Debug.Log("Enemy Has Buf, removing before destroy");
+            for (int i = 0; i < list.Length; i++)
+            {
+                Destroy(list[i]);
+            }
+        }
+        GetComponent<SpriteRenderer>().color = Color.white; //Reset Color.
+//        if (GetComponent<BleedBuf>() != null)
+//            Destroy(GetComponent<BleedBuf>());
+//        if (GetComponent<SlowBuf>() != null)
+//            Destroy(GetComponent<SlowBuf>());
+//        if (GetComponent<StunBuf>() != null)
+//            Destroy(GetComponent<StunBuf>());
 
         //Recycle
         enemyFactory.recycle(transform.gameObject);

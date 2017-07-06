@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public abstract class BaseTowerBehavior : MonoBehaviour {
 
     public Image mImage;
-    //    public Sprite[] levelImages;
+    public Sprite[] levelImages;
+    public Sprite[] levelCannonBallImages;
 
     protected float fireCountDown;
 
@@ -17,6 +18,7 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
 
     public int lv;
     public int value;
+    public int nextValue;
 
     public float range = 2.8f;
     public float interval = 2f;
@@ -96,8 +98,8 @@ public abstract class BaseTowerBehavior : MonoBehaviour {
     public void upgrade() {
         lv++;
         loadTowerProperties();
-        //        mImage.sprite = levelImages[I.lv];
-        transform.localScale = Vector3.Scale(transform.localScale, new Vector3(1.1f, 1.1f, 1f));
+        mImage.sprite = levelImages[lv];
+//        transform.localScale = Vector3.Scale(transform.localScale, new Vector3(1.1f, 1.1f, 1f));
     }
 
     public void sell() {

@@ -7,6 +7,7 @@ public class Card : MonoBehaviour {
 
     public int level;
     public UIStarManager stars;
+    public GameObject finishedLogo;
 
     float minScale = 1 / 1.5f;
 
